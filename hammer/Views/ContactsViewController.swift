@@ -17,6 +17,12 @@ class ContactsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+       //table.frame = view.bounds
+        tabBarItem = UITabBarItem(title: "Контакты", image: UIImage(named: "contacts"), tag: 0)
+    }
+    
 
     /*
     // MARK: - Navigation

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3272E36C28F9F54400D7AF53 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3272E36B28F9F54400D7AF53 /* MenuCollectionViewCell.swift */; };
+		3272E36E28F9F57900D7AF53 /* MenuCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3272E36D28F9F57900D7AF53 /* MenuCollectionView.swift */; };
+		3272E37028F9FBD900D7AF53 /* BannersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3272E36F28F9FBD900D7AF53 /* BannersModel.swift */; };
+		3272E37428FA06BC00D7AF53 /* menuButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3272E37328FA06BC00D7AF53 /* menuButtons.swift */; };
+		3272E37628FAD55300D7AF53 /* mainTableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3272E37528FAD55300D7AF53 /* mainTableTableViewCell.swift */; };
 		3290CF3828F8A03E003BA3E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290CF3728F8A03E003BA3E3 /* AppDelegate.swift */; };
 		3290CF3A28F8A03E003BA3E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290CF3928F8A03E003BA3E3 /* SceneDelegate.swift */; };
 		3290CF3C28F8A03E003BA3E3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290CF3B28F8A03E003BA3E3 /* ProfileViewController.swift */; };
@@ -17,9 +22,16 @@
 		3290CF4F28F8A245003BA3E3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290CF4E28F8A245003BA3E3 /* MenuViewController.swift */; };
 		3290CF5128F8A254003BA3E3 /* TrashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290CF5028F8A254003BA3E3 /* TrashViewController.swift */; };
 		3290CF5328F8A457003BA3E3 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290CF5228F8A457003BA3E3 /* File.swift */; };
+		3290CF5B28F98015003BA3E3 /* bannersCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290CF5A28F98015003BA3E3 /* bannersCollectionView.swift */; };
+		3290CF5D28F98193003BA3E3 /* BannersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290CF5C28F98193003BA3E3 /* BannersCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3272E36B28F9F54400D7AF53 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
+		3272E36D28F9F57900D7AF53 /* MenuCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionView.swift; sourceTree = "<group>"; };
+		3272E36F28F9FBD900D7AF53 /* BannersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannersModel.swift; sourceTree = "<group>"; };
+		3272E37328FA06BC00D7AF53 /* menuButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuButtons.swift; sourceTree = "<group>"; };
+		3272E37528FAD55300D7AF53 /* mainTableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainTableTableViewCell.swift; sourceTree = "<group>"; };
 		3290CF3428F8A03E003BA3E3 /* hammer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hammer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3290CF3728F8A03E003BA3E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3290CF3928F8A03E003BA3E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +44,8 @@
 		3290CF4E28F8A245003BA3E3 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		3290CF5028F8A254003BA3E3 /* TrashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashViewController.swift; sourceTree = "<group>"; };
 		3290CF5228F8A457003BA3E3 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		3290CF5A28F98015003BA3E3 /* bannersCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bannersCollectionView.swift; sourceTree = "<group>"; };
+		3290CF5C28F98193003BA3E3 /* BannersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannersCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,9 +94,16 @@
 			isa = PBXGroup;
 			children = (
 				3290CF4E28F8A245003BA3E3 /* MenuViewController.swift */,
+				3272E37528FAD55300D7AF53 /* mainTableTableViewCell.swift */,
 				3290CF4C28F8A215003BA3E3 /* ContactsViewController.swift */,
 				3290CF3B28F8A03E003BA3E3 /* ProfileViewController.swift */,
 				3290CF5028F8A254003BA3E3 /* TrashViewController.swift */,
+				3290CF5A28F98015003BA3E3 /* bannersCollectionView.swift */,
+				3290CF5C28F98193003BA3E3 /* BannersCollectionViewCell.swift */,
+				3272E36D28F9F57900D7AF53 /* MenuCollectionView.swift */,
+				3272E36B28F9F54400D7AF53 /* MenuCollectionViewCell.swift */,
+				3272E37328FA06BC00D7AF53 /* menuButtons.swift */,
+				3272E36F28F9FBD900D7AF53 /* BannersModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -158,13 +179,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3272E36E28F9F57900D7AF53 /* MenuCollectionView.swift in Sources */,
+				3272E37628FAD55300D7AF53 /* mainTableTableViewCell.swift in Sources */,
 				3290CF3C28F8A03E003BA3E3 /* ProfileViewController.swift in Sources */,
+				3290CF5D28F98193003BA3E3 /* BannersCollectionViewCell.swift in Sources */,
 				3290CF4D28F8A215003BA3E3 /* ContactsViewController.swift in Sources */,
 				3290CF5328F8A457003BA3E3 /* File.swift in Sources */,
 				3290CF4F28F8A245003BA3E3 /* MenuViewController.swift in Sources */,
+				3272E37428FA06BC00D7AF53 /* menuButtons.swift in Sources */,
 				3290CF5128F8A254003BA3E3 /* TrashViewController.swift in Sources */,
+				3272E37028F9FBD900D7AF53 /* BannersModel.swift in Sources */,
 				3290CF3828F8A03E003BA3E3 /* AppDelegate.swift in Sources */,
+				3290CF5B28F98015003BA3E3 /* bannersCollectionView.swift in Sources */,
 				3290CF3A28F8A03E003BA3E3 /* SceneDelegate.swift in Sources */,
+				3272E36C28F9F54400D7AF53 /* MenuCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

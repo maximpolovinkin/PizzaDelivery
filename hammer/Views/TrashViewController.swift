@@ -14,9 +14,16 @@ class TrashViewController: UIViewController {
         view.backgroundColor = .white
       
         
-        tabBarItem = UITabBarItem(title: "Корзина", image: UIImage(named: "trash"), tag: 0)
+       // tabBarItem = UITabBarItem(title: "Корзина", image: UIImage(named: "trash"), tag: 0)
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+       //table.frame = view.bounds
+        tabBarItem = UITabBarItem(title: "Корзина", image: UIImage(named: "trash"), tag: 0)
+    }
+    
     
 
     /*

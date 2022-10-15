@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Контакты-->
         <scene sceneID="VB6-mI-nvc">
             <objects>
                 <viewController id="Txf-PC-ipU" customClass="ContactsViewController" customModule="hammer" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,13 +17,13 @@
                         <viewLayoutGuide key="safeArea" id="PUa-Hh-3x5"/>
                         <color key="backgroundColor" red="0.89803922179999995" green="0.89803922179999995" blue="0.89803922179999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
-                    <tabBarItem key="tabBarItem" enabled="NO" title="Item 2" id="COr-9o-fpx"/>
+                    <tabBarItem key="tabBarItem" title="Контакты" image="contacts" id="COr-9o-fpx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dDh-tn-0uO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-952" y="64"/>
         </scene>
-        <!--Item 1-->
+        <!--Меню-->
         <scene sceneID="a8w-SV-raq">
             <objects>
                 <viewController id="Hu8-7Q-qZZ" customClass="MenuViewController" customModule="hammer" customModuleProvider="target" sceneMemberID="viewController">
@@ -33,7 +33,7 @@
                         <viewLayoutGuide key="safeArea" id="N9t-bH-DK6"/>
                         <color key="backgroundColor" red="0.89803922179999995" green="0.89803922179999995" blue="0.89803922179999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="4KK-0N-2sl"/>
+                    <tabBarItem key="tabBarItem" title="Меню" image="menu" id="4KK-0N-2sl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tgi-sh-DBd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -62,7 +62,7 @@
             </objects>
             <point key="canvasLocation" x="-580" y="-692"/>
         </scene>
-        <!--Item-->
+        <!--Профиль-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ProfileViewController" customModule="hammer" customModuleProvider="target" sceneMemberID="viewController">
@@ -72,13 +72,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.89803922179999995" green="0.89803922179999995" blue="0.89803922179999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
-                    <tabBarItem key="tabBarItem" enabled="NO" title="Item" id="flG-qF-gLs"/>
+                    <tabBarItem key="tabBarItem" title="Профиль" image="profile" id="flG-qF-gLs"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-229" y="64"/>
         </scene>
-        <!--Item-->
+        <!--Корзина-->
         <scene sceneID="nNC-Py-pTP">
             <objects>
                 <viewController id="Fq5-gx-uyr" customClass="TrashViewController" customModule="hammer" customModuleProvider="target" sceneMemberID="viewController">
@@ -88,11 +88,17 @@
                         <viewLayoutGuide key="safeArea" id="9Dc-cF-pQ8"/>
                         <color key="backgroundColor" red="0.89803922179999995" green="0.89803922179999995" blue="0.89803922179999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="hV5-EO-OyD"/>
+                    <tabBarItem key="tabBarItem" title="Корзина" image="trash" id="hV5-EO-OyD"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MIa-a4-Wih" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="567" y="64"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="contacts" width="16" height="21"/>
+        <image name="menu" width="21" height="20"/>
+        <image name="profile" width="18" height="19"/>
+        <image name="trash" width="20" height="20"/>
+    </resources>
 </document>
