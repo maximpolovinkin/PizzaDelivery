@@ -59,6 +59,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3272E37728FAE58B00D7AF53 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3272E36F28F9FBD900D7AF53 /* BannersModel.swift */,
+				3272E37328FA06BC00D7AF53 /* menuButtons.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3272E37928FAE5AC00D7AF53 /* Presentor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentor;
+			sourceTree = "<group>";
+		};
 		3290CF2B28F8A03E003BA3E3 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +94,8 @@
 		3290CF3628F8A03E003BA3E3 /* hammer */ = {
 			isa = PBXGroup;
 			children = (
+				3272E37928FAE5AC00D7AF53 /* Presentor */,
+				3272E37728FAE58B00D7AF53 /* Models */,
 				3290CF4B28F8A1F1003BA3E3 /* Views */,
 				3290CF3728F8A03E003BA3E3 /* AppDelegate.swift */,
 				3290CF3928F8A03E003BA3E3 /* SceneDelegate.swift */,
@@ -93,17 +111,15 @@
 		3290CF4B28F8A1F1003BA3E3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3290CF4E28F8A245003BA3E3 /* MenuViewController.swift */,
 				3272E37528FAD55300D7AF53 /* mainTableTableViewCell.swift */,
+				3290CF4E28F8A245003BA3E3 /* MenuViewController.swift */,
 				3290CF4C28F8A215003BA3E3 /* ContactsViewController.swift */,
 				3290CF3B28F8A03E003BA3E3 /* ProfileViewController.swift */,
+				3290CF5C28F98193003BA3E3 /* BannersCollectionViewCell.swift */,
 				3290CF5028F8A254003BA3E3 /* TrashViewController.swift */,
 				3290CF5A28F98015003BA3E3 /* bannersCollectionView.swift */,
-				3290CF5C28F98193003BA3E3 /* BannersCollectionViewCell.swift */,
 				3272E36D28F9F57900D7AF53 /* MenuCollectionView.swift */,
 				3272E36B28F9F54400D7AF53 /* MenuCollectionViewCell.swift */,
-				3272E37328FA06BC00D7AF53 /* menuButtons.swift */,
-				3272E36F28F9FBD900D7AF53 /* BannersModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
