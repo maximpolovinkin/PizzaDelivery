@@ -7,24 +7,30 @@
 
 import UIKit
 
-class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+var table: UITableView = {
+   let table = UITableView(frame: CGRect(x: 0, y: 329, width: 0, height: 570), style: .plain)
+   table.register(mainTableTableViewCell.self, forCellReuseIdentifier: "cell")
+   
+   return table
+}()
 
+class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, presentorDelegate {
+  
     private var collectionView = bannersCollectionView()
     private var menuCollectionView = MenuCollectionView()
    
     var navBar = UINavigationBar(frame: CGRect(x: 0, y: 46, width: UIScreen.main.bounds.width, height: 40))
     
-    private let table: UITableView = {
-        let table = UITableView(frame: CGRect(x: 0, y: 329, width: 0, height: 570), style: .plain)
-        table.register(mainTableTableViewCell.self, forCellReuseIdentifier: "cell")
-        
-        return table
-    }()
+    private let presenter = presentor()
+    private var data = [menuItems]()
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        presenter.setViewDelegate(delegate: self)
+        presenter.getData()
         
         view.backgroundColor = .init(named: "Color")
         title = "menu"
@@ -84,16 +90,31 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return data.count
+    
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = table.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! mainTableTableViewCell
         
+       
         
-        cell.imageView?.image = UIImage(named: "pizza1")
-        cell.textField.text = "Баварские колбаски"
+        var url = URL(string: "sdf")
+        
+        DispatchQueue.global().async {
+             url = URL(string: self.data[indexPath.row].image)
+        }
+        DispatchQueue.main.async {
+            if let data = try? Data(contentsOf: url!)
+            {
+               // cell.imageView?.image = UIImage(data: data)
+                cell.img.image = UIImage(data: data)
+            }
+        }
+            
+     
+        cell.textField.text = data[indexPath.row].title
         cell.descriptionTextField.text = "Ветчина,шампиньоны, увеличинная порция моцареллы, томатный соус"
         
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
@@ -104,4 +125,14 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     @objc func chooseCity() {
     }
+    
+    func presentData(data: [menuItems]) {
+        self.data = data
+        
+        DispatchQueue.main.async {
+            table.reloadData()
+        }
+    }
+    
+
 }

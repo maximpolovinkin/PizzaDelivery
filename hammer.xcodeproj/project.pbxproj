@@ -12,6 +12,8 @@
 		3272E37028F9FBD900D7AF53 /* BannersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3272E36F28F9FBD900D7AF53 /* BannersModel.swift */; };
 		3272E37428FA06BC00D7AF53 /* menuButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3272E37328FA06BC00D7AF53 /* menuButtons.swift */; };
 		3272E37628FAD55300D7AF53 /* mainTableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3272E37528FAD55300D7AF53 /* mainTableTableViewCell.swift */; };
+		3272E37B28FB201F00D7AF53 /* Presentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3272E37A28FB201F00D7AF53 /* Presentor.swift */; };
+		3272E37D28FB225F00D7AF53 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3272E37C28FB225F00D7AF53 /* DataModel.swift */; };
 		3290CF3828F8A03E003BA3E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290CF3728F8A03E003BA3E3 /* AppDelegate.swift */; };
 		3290CF3A28F8A03E003BA3E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290CF3928F8A03E003BA3E3 /* SceneDelegate.swift */; };
 		3290CF3C28F8A03E003BA3E3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290CF3B28F8A03E003BA3E3 /* ProfileViewController.swift */; };
@@ -32,6 +34,8 @@
 		3272E36F28F9FBD900D7AF53 /* BannersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannersModel.swift; sourceTree = "<group>"; };
 		3272E37328FA06BC00D7AF53 /* menuButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuButtons.swift; sourceTree = "<group>"; };
 		3272E37528FAD55300D7AF53 /* mainTableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainTableTableViewCell.swift; sourceTree = "<group>"; };
+		3272E37A28FB201F00D7AF53 /* Presentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentor.swift; sourceTree = "<group>"; };
+		3272E37C28FB225F00D7AF53 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		3290CF3428F8A03E003BA3E3 /* hammer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hammer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3290CF3728F8A03E003BA3E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3290CF3928F8A03E003BA3E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +68,7 @@
 			children = (
 				3272E36F28F9FBD900D7AF53 /* BannersModel.swift */,
 				3272E37328FA06BC00D7AF53 /* menuButtons.swift */,
+				3272E37C28FB225F00D7AF53 /* DataModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -71,6 +76,7 @@
 		3272E37928FAE5AC00D7AF53 /* Presentor */ = {
 			isa = PBXGroup;
 			children = (
+				3272E37A28FB201F00D7AF53 /* Presentor.swift */,
 			);
 			path = Presentor;
 			sourceTree = "<group>";
@@ -198,7 +204,9 @@
 				3272E36E28F9F57900D7AF53 /* MenuCollectionView.swift in Sources */,
 				3272E37628FAD55300D7AF53 /* mainTableTableViewCell.swift in Sources */,
 				3290CF3C28F8A03E003BA3E3 /* ProfileViewController.swift in Sources */,
+				3272E37B28FB201F00D7AF53 /* Presentor.swift in Sources */,
 				3290CF5D28F98193003BA3E3 /* BannersCollectionViewCell.swift in Sources */,
+				3272E37D28FB225F00D7AF53 /* DataModel.swift in Sources */,
 				3290CF4D28F8A215003BA3E3 /* ContactsViewController.swift in Sources */,
 				3290CF5328F8A457003BA3E3 /* File.swift in Sources */,
 				3290CF4F28F8A245003BA3E3 /* MenuViewController.swift in Sources */,
