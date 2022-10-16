@@ -12,9 +12,7 @@ class MenuCollectionView: UICollectionView , UICollectionViewDelegate, UICollect
     var cells = [menu]()
     var colorChangeFlag = false
     var indexColor = IndexPath(row: 0, section: 0)
-   
-   // private var mainView = MenuViewController()
-
+    
     init() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -41,7 +39,7 @@ class MenuCollectionView: UICollectionView , UICollectionViewDelegate, UICollect
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.reuseId, for: indexPath) as! MenuCollectionViewCell
-       
+        
         cell.imageView.image = cells[indexPath.row].image
         cell.layer.cornerRadius = cell.bounds.height / 2
         print(indexPath.row)
@@ -52,30 +50,32 @@ class MenuCollectionView: UICollectionView , UICollectionViewDelegate, UICollect
         CGSize(width: 88, height: 32)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-       
-       
+        
+        
         switch indexPath.item {
         case 0:
             if(colorChangeFlag) {
                 collectionView.cellForItem(at: indexColor)?.backgroundColor = .none
                 colorChangeFlag = false
             }
-
+            
             let index = IndexPath(row: 0, section: 0)
             colorChangeFlag = true
             indexColor = indexPath
             
             table.scrollToRow(at: index, at: .none, animated: true)
             collectionView.cellForItem(at: indexPath)?.backgroundColor = UIColor(named: "menuBgc")
-          
+            
             return
         case 1:
             if(colorChangeFlag) {
                 collectionView.cellForItem(at: indexColor)?.backgroundColor = .none
                 colorChangeFlag = false
             }
+            
             colorChangeFlag = true
             indexColor = indexPath
+    
             collectionView.cellForItem(at: indexPath)?.backgroundColor = UIColor(named: "menuBgc")
             let index = IndexPath(row: 5, section: 0)
             table.scrollToRow(at: index, at: .none, animated: true)
@@ -85,8 +85,10 @@ class MenuCollectionView: UICollectionView , UICollectionViewDelegate, UICollect
                 collectionView.cellForItem(at: indexColor)?.backgroundColor = .none
                 colorChangeFlag = false
             }
+            
             colorChangeFlag = true
             indexColor = indexPath
+            
             collectionView.cellForItem(at: indexPath)?.backgroundColor = UIColor(named: "menuBgc")
             let index = IndexPath(row: 10, section: 0)
             table.scrollToRow(at: index, at: .none, animated: true)
@@ -96,8 +98,10 @@ class MenuCollectionView: UICollectionView , UICollectionViewDelegate, UICollect
                 collectionView.cellForItem(at: indexColor)?.backgroundColor = .none
                 colorChangeFlag = false
             }
+            
             colorChangeFlag = true
             indexColor = indexPath
+            
             collectionView.cellForItem(at: indexPath)?.backgroundColor = UIColor(named: "menuBgc")
             let index = IndexPath(row: 15, section: 0)
             table.scrollToRow(at: index, at: .none, animated: true)
@@ -105,7 +109,7 @@ class MenuCollectionView: UICollectionView , UICollectionViewDelegate, UICollect
         default:
             return
         }
-        }
     }
-    
+}
+
 

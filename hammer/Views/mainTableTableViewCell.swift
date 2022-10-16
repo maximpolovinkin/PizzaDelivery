@@ -21,8 +21,6 @@ class mainTableTableViewCell: UITableViewCell {
         override var intrinsicContentSize: CGSize {
             return .init(width: 0, height: 44)
         }
-        
-        
     }
     
     let textField: UITextView = {
@@ -72,8 +70,6 @@ class mainTableTableViewCell: UITableViewCell {
         descriptionTextField.frame = CGRect(x: 175, y: 50, width: 171, height: 74)
         priceButton.frame = CGRect(x: 305, y: 125, width: 87, height: 32)
         img.frame = CGRect(x: 5, y: 5, width: 165, height: 165)
-    
-        
     }
     
     required init?(coder: NSCoder) {

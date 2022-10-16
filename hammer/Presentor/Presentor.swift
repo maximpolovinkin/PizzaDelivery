@@ -27,10 +27,9 @@ class presentor {
                 guard let data = data, error == nil else {
                     return
                 }
-             
+                
                 do {
                     let responce = try JSONDecoder().decode(initial.self, from: data)
-                    print(responce)
                     self.delegate?.presentData(data: responce.menuItems)
                 }
                 catch {
@@ -39,7 +38,7 @@ class presentor {
             }
             task.resume()
         }
-       
+        
     }
     public func setViewDelegate(delegate: PresentorDelegate) {
         self.delegate = delegate
