@@ -24,43 +24,12 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     private let presenter = presentor()
     private var data = [menuItems]()
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        presenter.setViewDelegate(delegate: self)
-        presenter.getData()
-        
-        view.backgroundColor = .init(named: "Color")
-        title = "menu"
-        view.addSubview(table)
-        table.dataSource = self
-        table.delegate = self
-        view.addSubview(collectionView)
-        view.addSubview(menuCollectionView)
-        collectionView.contentInset.left = 5
-        menuCollectionView.contentInset.left = 20
-        setNavigationBar()
-        navBar.barTintColor = .init(named: "Color")
-        
-        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        collectionView.topAnchor.constraint(equalTo: navBar.bottomAnchor, constant: 40).isActive = true
-        collectionView.heightAnchor.constraint(equalToConstant: 142).isActive = true
-        
-        
-        menuCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        menuCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        menuCollectionView.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 10).isActive = true
-        menuCollectionView.heightAnchor.constraint(equalToConstant: 42).isActive = true
-        
-        
-        tabBarController?.tabBar.bounds = CGRect(x: 0, y: 0, width: 375, height: 83)
-        
-        collectionView.sett(cells: banner.fetchBanners())
-        menuCollectionView.sett(cells: menu.fetchBanners())
-        
+        setViews()
+        setConstraints()
+        setAppearence()
+        dataWork()
     }
     
     override func viewDidLayoutSubviews() {
@@ -99,7 +68,6 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
         }
         
-        
         cell.textField.text = data[indexPath.row].title
         cell.descriptionTextField.text = "Ветчина,шампиньоны, увеличинная порция моцареллы, томатный соус"
         
@@ -116,4 +84,45 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             table.reloadData()
         }
     }
+    
+    func setViews() {
+        setNavigationBar()
+        view.addSubview(table)
+        view.addSubview(collectionView)
+        view.addSubview(menuCollectionView)
+    }
+    func setConstraints() {
+        collectionView.contentInset.left = 5
+        menuCollectionView.contentInset.left = 20
+        
+        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        collectionView.topAnchor.constraint(equalTo: navBar.bottomAnchor, constant: 40).isActive = true
+        collectionView.heightAnchor.constraint(equalToConstant: 142).isActive = true
+        
+        
+        menuCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        menuCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        menuCollectionView.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 10).isActive = true
+        menuCollectionView.heightAnchor.constraint(equalToConstant: 42).isActive = true
+    }
+    
+    func setAppearence() {
+        view.backgroundColor = .init(named: "Color")
+        title = "menu"
+        navBar.barTintColor = .init(named: "Color")
+        tabBarController?.tabBar.bounds = CGRect(x: 0, y: 0, width: 375, height: 83)
+    }
+    
+    func dataWork() {
+        table.dataSource = self
+        table.delegate = self
+        
+        presenter.setViewDelegate(delegate: self)
+        presenter.getData()
+        
+        collectionView.sett(cells: banner.fetchBanners())
+        menuCollectionView.sett(cells: menu.fetchBanners())
+    }
 }
+
