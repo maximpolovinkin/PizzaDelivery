@@ -30,8 +30,10 @@ class presentor {
                 print(data)
                 do {
                     let responce = try JSONDecoder().decode(initial.self, from: data)
+                    DispatchQueue.global().async {
+                        self.delegate?.presentData(data: responce.menuItems)
+                    }
                     
-                    self.delegate?.presentData(data: responce.menuItems)
                 }
                 catch {
                     print(error)

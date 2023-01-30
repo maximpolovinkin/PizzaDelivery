@@ -15,9 +15,6 @@ var table: UITableView = {
 }()
 
 class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, presentorDelegate {
-  
-    
-    
     private var collectionView = bannersCollectionView()
     private var menuCollectionView = MenuCollectionView()
     private let citiController = CitiesViewController()
@@ -25,8 +22,9 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var navBar = UINavigationBar(frame: CGRect(x: 0, y: 46, width: UIScreen.main.bounds.width, height: 40))
     
-    private let presenter = presentor()
-    private var data = [menuItems]()
+    let presenter = presentor()
+    var data = [menuItems]()
+    var pizzaImages = [UIImage?]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +32,16 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         setConstraints()
         setAppearence()
         dataWork()
-
+    }
+    
+    func loadImages(data: [menuItems]) {
+        for item in data {
+            guard let url = URL(string: item.image) else { return  }
+            if let data = try? Data(contentsOf: url)
+            {
+                pizzaImages.append(UIImage(data: data))
+            }
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -55,23 +62,13 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(data.count)
         return data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = table.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! mainTableTableViewCell
-        var url = URL(string: "sdf")
-        
-        DispatchQueue.global().async {
-            url = URL(string: self.data[indexPath.row].image)
-        }
-        DispatchQueue.main.async {
-            if let data = try? Data(contentsOf: url!)
-            {
-                cell.img.image = UIImage(data: data)
-            }
-        }
-        
+        cell.img.image = pizzaImages[indexPath.row]
         cell.textField.text = data[indexPath.row].title
         cell.descriptionTextField.text = "Ветчина,шампиньоны, увеличинная порция моцареллы, томатный соус"
         
@@ -98,12 +95,12 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     @objc func chooseCity() {
-//        citiController.modalPresentationStyle = .fullScreen
         present(citiController, animated: true)
     }
     
     func presentData(data: [menuItems]) {
         self.data = data
+        loadImages(data: data)
         DispatchQueue.main.async {
             table.reloadData()
         }
@@ -149,11 +146,9 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         menuCollectionView.sett(cells: menu.fetchBanners())
     }
     
-     func openPizzaSheet() {
-      
-         pizza.modalPresentationStyle = .fullScreen
-         present(pizza, animated: true)
-       
+    func openPizzaSheet() {
+        pizza.modalPresentationStyle = .fullScreen
+        present(pizza, animated: true)
         
     }
 }

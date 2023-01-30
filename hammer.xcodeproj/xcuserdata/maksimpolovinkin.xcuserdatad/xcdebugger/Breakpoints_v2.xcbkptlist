@@ -119,130 +119,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C2F82162-E11A-4307-A348-93CE6A373358"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "hammer/Views/MenuViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "MenuViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "C2F82162-E11A-4307-A348-93CE6A373358 - c4fabebdcdec5848"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "hammer.MenuViewController.data.getter : Swift.Array&lt;hammer.menuItems&gt;"
-                  moduleName = "hammer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maksimpolovinkin/Documents/Swift%20Projects/hammer/hammer/Views/MenuViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "88">
-               </Location>
-               <Location
-                  uuid = "C2F82162-E11A-4307-A348-93CE6A373358 - 4dacb2268f7d17dc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "hammer.MenuViewController.data.setter : Swift.Array&lt;hammer.menuItems&gt;"
-                  moduleName = "hammer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maksimpolovinkin/Documents/Swift%20Projects/hammer/hammer/Views/MenuViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "112">
-               </Location>
-               <Location
-                  uuid = "C2F82162-E11A-4307-A348-93CE6A373358 - 85fcd48c5d8d98ab"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "hammer.MenuViewController.data.modify : Swift.Array&lt;hammer.menuItems&gt;"
-                  moduleName = "hammer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maksimpolovinkin/Documents/Swift%20Projects/hammer/hammer/Views/MenuViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  uuid = "C2F82162-E11A-4307-A348-93CE6A373358 - 96eb746e89435330"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "hammer.MenuViewController.data.modify : Swift.Array&lt;hammer.menuItems&gt; with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "hammer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maksimpolovinkin/Documents/Swift%20Projects/hammer/hammer/Views/MenuViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  uuid = "C2F82162-E11A-4307-A348-93CE6A373358 - 83d5757840ed2a4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "hammer.MenuViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; hammer.MenuViewController"
-                  moduleName = "hammer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maksimpolovinkin/Documents/Swift%20Projects/hammer/hammer/Views/MenuViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "492">
-               </Location>
-               <Location
-                  uuid = "C2F82162-E11A-4307-A348-93CE6A373358 - ff6d619f22ca7433"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "hammer.MenuViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;hammer.MenuViewController&gt;"
-                  moduleName = "hammer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maksimpolovinkin/Documents/Swift%20Projects/hammer/hammer/Views/MenuViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "468">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "77BC3204-6910-4BE7-A639-C35CC208CCF4"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "hammer/Views/MenuViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "316E0D1C-D875-4456-9911-522D59DA76AD"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -276,7 +152,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "31B54633-5B12-45D9-AD5A-5F7D3F0C2AD0"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "hammer/Views/mainTableTableViewCell.swift"
@@ -285,22 +161,6 @@
             startingLineNumber = "86"
             endingLineNumber = "86"
             landmarkName = "priceTouched()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "446E85E3-C596-4A8F-AD8A-9D03C92EBCE3"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "hammer/Views/MenuViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
-            landmarkName = "openPizzaSheet()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
