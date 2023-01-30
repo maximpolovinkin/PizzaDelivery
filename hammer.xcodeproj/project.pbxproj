@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3207BA8B29770E2B00D85DE0 /* CitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3207BA8A29770E2B00D85DE0 /* CitiesViewController.swift */; };
+		3224A8CF296EEF6D009E0D1A /* SupportChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3224A8CE296EEF6D009E0D1A /* SupportChatController.swift */; };
+		3224A8D1296F1DC1009E0D1A /* PizzaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3224A8D0296F1DC1009E0D1A /* PizzaViewController.swift */; };
 		3272E36C28F9F54400D7AF53 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3272E36B28F9F54400D7AF53 /* MenuCollectionViewCell.swift */; };
 		3272E36E28F9F57900D7AF53 /* MenuCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3272E36D28F9F57900D7AF53 /* MenuCollectionView.swift */; };
 		3272E37028F9FBD900D7AF53 /* BannersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3272E36F28F9FBD900D7AF53 /* BannersModel.swift */; };
@@ -28,6 +31,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3207BA8A29770E2B00D85DE0 /* CitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewController.swift; sourceTree = "<group>"; };
+		3224A8CE296EEF6D009E0D1A /* SupportChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportChatController.swift; sourceTree = "<group>"; };
+		3224A8D0296F1DC1009E0D1A /* PizzaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaViewController.swift; sourceTree = "<group>"; };
 		3272E36B28F9F54400D7AF53 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		3272E36D28F9F57900D7AF53 /* MenuCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionView.swift; sourceTree = "<group>"; };
 		3272E36F28F9FBD900D7AF53 /* BannersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannersModel.swift; sourceTree = "<group>"; };
@@ -114,14 +120,17 @@
 		3290CF4B28F8A1F1003BA3E3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3272E37528FAD55300D7AF53 /* mainTableTableViewCell.swift */,
 				3290CF4E28F8A245003BA3E3 /* MenuViewController.swift */,
 				3290CF4C28F8A215003BA3E3 /* ContactsViewController.swift */,
-				3290CF3B28F8A03E003BA3E3 /* ProfileViewController.swift */,
-				3290CF5C28F98193003BA3E3 /* BannersCollectionViewCell.swift */,
 				3290CF5028F8A254003BA3E3 /* TrashViewController.swift */,
+				3224A8CE296EEF6D009E0D1A /* SupportChatController.swift */,
+				3290CF3B28F8A03E003BA3E3 /* ProfileViewController.swift */,
+				3224A8D0296F1DC1009E0D1A /* PizzaViewController.swift */,
+				3207BA8A29770E2B00D85DE0 /* CitiesViewController.swift */,
 				3290CF5A28F98015003BA3E3 /* bannersCollectionView.swift */,
 				3272E36D28F9F57900D7AF53 /* MenuCollectionView.swift */,
+				3272E37528FAD55300D7AF53 /* mainTableTableViewCell.swift */,
+				3290CF5C28F98193003BA3E3 /* BannersCollectionViewCell.swift */,
 				3272E36B28F9F54400D7AF53 /* MenuCollectionViewCell.swift */,
 			);
 			path = Views;
@@ -201,10 +210,13 @@
 				3272E36E28F9F57900D7AF53 /* MenuCollectionView.swift in Sources */,
 				3272E37628FAD55300D7AF53 /* mainTableTableViewCell.swift in Sources */,
 				3290CF3C28F8A03E003BA3E3 /* ProfileViewController.swift in Sources */,
+				3207BA8B29770E2B00D85DE0 /* CitiesViewController.swift in Sources */,
 				3272E37B28FB201F00D7AF53 /* Presentor.swift in Sources */,
+				3224A8D1296F1DC1009E0D1A /* PizzaViewController.swift in Sources */,
 				3290CF5D28F98193003BA3E3 /* BannersCollectionViewCell.swift in Sources */,
 				3272E37D28FB225F00D7AF53 /* DataModel.swift in Sources */,
 				3290CF4D28F8A215003BA3E3 /* ContactsViewController.swift in Sources */,
+				3224A8CF296EEF6D009E0D1A /* SupportChatController.swift in Sources */,
 				3290CF4F28F8A245003BA3E3 /* MenuViewController.swift in Sources */,
 				3272E37428FA06BC00D7AF53 /* menuButtons.swift in Sources */,
 				3290CF5128F8A254003BA3E3 /* TrashViewController.swift in Sources */,

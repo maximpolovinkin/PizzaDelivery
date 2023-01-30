@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class mainTableTableViewCell: UITableViewCell {
     
     class TextField: UITextView {
@@ -22,6 +23,9 @@ class mainTableTableViewCell: UITableViewCell {
             return .init(width: 0, height: 44)
         }
     }
+    
+    let pizzaSheet = PizzaViewController()
+    let menuController = MenuViewController()
     
     let textField: UITextView = {
         let tf = TextField()
@@ -51,6 +55,7 @@ class mainTableTableViewCell: UITableViewCell {
         pb.setTitleColor(UIColor(named: "priceColor"), for: .normal)
         
         pb.titleLabel?.font = .systemFont(ofSize: 13)
+    
         
         return pb
     }()
@@ -65,6 +70,7 @@ class mainTableTableViewCell: UITableViewCell {
         addSubview(textField)
         addSubview(descriptionTextField)
         addSubview(priceButton)
+        priceButton.addTarget(MenuViewController.self, action: #selector(priceTouched), for: .touchUpInside)
         addSubview(img)
         textField.frame = CGRect(x: 175, y: 5, width: 171, height: 52)
         descriptionTextField.frame = CGRect(x: 175, y: 50, width: 171, height: 74)
@@ -74,6 +80,10 @@ class mainTableTableViewCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func priceTouched() {
+        priceButton.titleLabel?.text = "0"
     }
     
 

@@ -20,16 +20,17 @@ class presentor {
     
     weak var delegate: PresentorDelegate?
     
-    public func getData() {
+    public func getData() { // Первый скрин с пиццами
         guard let url = URL(string: "https://api.spoonacular.com/food/menuItems/search?query=pizza&number=20&apiKey=b0912c42d2ac47ca9b8a40ec6ca11313") else { return }
-        DispatchQueue.global().async {
+
             let task = URLSession.shared.dataTask(with: url) {data, _, error in
                 guard let data = data, error == nil else {
                     return
                 }
-                
+                print(data)
                 do {
                     let responce = try JSONDecoder().decode(initial.self, from: data)
+                    
                     self.delegate?.presentData(data: responce.menuItems)
                 }
                 catch {
@@ -37,7 +38,6 @@ class presentor {
                 }
             }
             task.resume()
-        }
         
     }
     public func setViewDelegate(delegate: PresentorDelegate) {

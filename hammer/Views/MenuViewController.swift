@@ -15,9 +15,13 @@ var table: UITableView = {
 }()
 
 class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, presentorDelegate {
+  
+    
     
     private var collectionView = bannersCollectionView()
     private var menuCollectionView = MenuCollectionView()
+    private let citiController = CitiesViewController()
+    let pizza = PizzaViewController()
     
     var navBar = UINavigationBar(frame: CGRect(x: 0, y: 46, width: UIScreen.main.bounds.width, height: 40))
     
@@ -30,6 +34,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         setConstraints()
         setAppearence()
         dataWork()
+
     }
     
     override func viewDidLayoutSubviews() {
@@ -40,9 +45,8 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func setNavigationBar() {
-        
         let navItem = UINavigationItem(title: "")
-        let doneItem = UIBarButtonItem(title: "Москва v", style: UIBarButtonItem.Style.plain, target: nil, action: #selector(chooseCity))
+        let doneItem = UIBarButtonItem(title: "Москва v", style: UIBarButtonItem.Style.plain, target: self, action: #selector(chooseCity))
         doneItem.tintColor = .black
         navItem.leftBarButtonItem = doneItem
         navBar.setItems([navItem], animated: false)
@@ -72,10 +76,30 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.descriptionTextField.text = "Ветчина,шампиньоны, увеличинная порция моцареллы, томатный соус"
         
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
+        
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //pizza.pizzaDescription.text = data[indexPath.row].title
+        
+        var url = URL(string: "sdf")
+        DispatchQueue.global().async {
+            url = URL(string: self.data[indexPath.row].image)
+            self.pizza.pizzaUrl = self.data[indexPath.row].image
+        }
+        DispatchQueue.main.async {
+            if let data = try? Data(contentsOf: url!)
+            {
+                self.pizza.pizzaImg = UIImage(data: data)!
+            }
+        }
+        openPizzaSheet()
+    }
+    
     @objc func chooseCity() {
+//        citiController.modalPresentationStyle = .fullScreen
+        present(citiController, animated: true)
     }
     
     func presentData(data: [menuItems]) {
@@ -123,6 +147,14 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         collectionView.sett(cells: banner.fetchBanners())
         menuCollectionView.sett(cells: menu.fetchBanners())
+    }
+    
+     func openPizzaSheet() {
+      
+         pizza.modalPresentationStyle = .fullScreen
+         present(pizza, animated: true)
+       
+        
     }
 }
 
