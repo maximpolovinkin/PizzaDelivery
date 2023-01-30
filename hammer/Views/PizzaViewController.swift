@@ -15,6 +15,7 @@ class PizzaViewController: UIViewController {
     var data  = menuItems(title: "asda", image: "asdas")
     //var trash = TrashViewController()
 //    var items = [menuItems]()
+    //sdfs
     
     //var trash = TrashViewController()
     weak var trashDelegate: TrashViewControllerrDelegate?
