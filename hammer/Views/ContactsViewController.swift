@@ -10,7 +10,7 @@ import UIKit
 class ContactsViewController: UIViewController {
     
     let chatViewController = SupportChatController()
-    
+
     let mapButton : UIButton = {
         let button = UIButton(frame: CGRect(x: 92, y: 200, width: 210, height: 50))
         button.setTitleColor(.init(named: "Color"), for: .normal)
@@ -35,8 +35,6 @@ class ContactsViewController: UIViewController {
         return button
     }()
     
-
-    
     let chatButton : UIButton = { // кнопка вызова поддержки
         let button = UIButton(frame: CGRect(x: 193, y: 5, width: 158, height: 50))
         button.setTitle("Написать в чат", for: .normal)
@@ -56,6 +54,7 @@ class ContactsViewController: UIViewController {
         
         return supportLabel
     }()
+ 
     
     let buttonsStack : UIStackView = {
         let buttonsStack = UIStackView(frame: CGRect(x: 10, y: 350, width: 345, height: 40))
@@ -81,6 +80,7 @@ class ContactsViewController: UIViewController {
         tabBarItem = UITabBarItem(title: "Контакты", image: UIImage(named: "contacts"), tag: 0)
         setUpViews()
         setActions()
+       
     }
     
     override func viewDidLayoutSubviews() {

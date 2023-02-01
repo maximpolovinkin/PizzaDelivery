@@ -6,6 +6,9 @@
 //
 
 import UIKit
+protocol PizzaViewControllerrDelegate: AnyObject {
+    func fillTheTableWith(pizzaImg: String, pizzaDescription: String)
+}
 
 class PizzaViewController: UIViewController {
     
@@ -13,12 +16,11 @@ class PizzaViewController: UIViewController {
     var pizzaUrl = ""
     var pizzaDescription = UILabel(frame: CGRect(x: 15, y: 475, width: 360, height: 25))
     var data  = menuItems(title: "asda", image: "asdas")
-    //var trash = TrashViewController()
-//    var items = [menuItems]()
-    //sdfs
+   
+   
+    weak var delegate: PizzaViewControllerrDelegate?
+    let str = UIStoryboard(name: "Main", bundle: nil)
     
-    //var trash = TrashViewController()
-    weak var trashDelegate: TrashViewControllerrDelegate?
     
     let closeBtn : UIButton = {
         let closeBtn = UIButton(type: .close)
@@ -28,7 +30,7 @@ class PizzaViewController: UIViewController {
         
         return closeBtn
     }()
-    
+  
     override func viewWillAppear(_ animated: Bool) {
         setContent()
       
@@ -74,7 +76,7 @@ class PizzaViewController: UIViewController {
     
     let toTrashButton : UIButton = {
         let toTrashButton = UIButton(frame:CGRect(x: 15, y: 750, width: 360, height: 60))
-//        toTrashButton.addTarget(PizzaViewController.self, action: #selector(moveToTrash), for: .touchUpInside)
+    
         toTrashButton.backgroundColor = UIColor(named: "priceColor")
         toTrashButton.layer.cornerRadius = toTrashButton.bounds.height / 2
         toTrashButton.setTitle("В корзину за 345 р", for: .normal)
@@ -91,14 +93,13 @@ class PizzaViewController: UIViewController {
     }
     
     @objc func moveToTrash() {
-//        items.append(data)
-//        //printContent(items)
-//        print(items.count)
-        trashDelegate?.fillTheTableWith(pizzaImg: pizzaUrl, pizzaDescription: pizzaDescription.text!)
+        var pizza = str.instantiateViewController(withIdentifier: "vc2") as? TrashViewController
+        data.title = "lllll"
+        pizza?.setTrash(data: data)
+        self.delegate?.fillTheTableWith(pizzaImg: "ads", pizzaDescription: "asd")
     }
 
     func setActions(){ // was added cuz caught unrecognized selector sent to class
-       
         closeBtn.addTarget(self, action: #selector(close), for: .touchUpInside)
         toTrashButton.addTarget(self, action: #selector(moveToTrash), for: .touchUpInside)
     }

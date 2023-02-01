@@ -10,7 +10,7 @@
         <!--Контакты-->
         <scene sceneID="VB6-mI-nvc">
             <objects>
-                <viewController id="Txf-PC-ipU" customClass="ContactsViewController" customModule="hammer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="govno" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Txf-PC-ipU" customClass="ContactsViewController" customModule="hammer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="r1N-rN-g9d">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -81,7 +81,7 @@
         <!--Корзина-->
         <scene sceneID="nNC-Py-pTP">
             <objects>
-                <viewController id="Fq5-gx-uyr" customClass="TrashViewController" customModule="hammer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vc2" id="Fq5-gx-uyr" customClass="TrashViewController" customModule="hammer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V2P-pC-cwe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

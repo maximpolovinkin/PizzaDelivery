@@ -28,10 +28,11 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        dataWork()
         setViews()
         setConstraints()
         setAppearence()
-        dataWork()
+     
     }
     
     func loadImages(data: [menuItems]) {
@@ -62,7 +63,6 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(data.count)
         return data.count
     }
     
@@ -78,19 +78,11 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //pizza.pizzaDescription.text = data[indexPath.row].title
         
-        var url = URL(string: "sdf")
-        DispatchQueue.global().async {
-            url = URL(string: self.data[indexPath.row].image)
-            self.pizza.pizzaUrl = self.data[indexPath.row].image
+        if let pizzaImg = pizzaImages[indexPath.row] {
+            self.pizza.pizzaImg = pizzaImg
         }
-        DispatchQueue.main.async {
-            if let data = try? Data(contentsOf: url!)
-            {
-                self.pizza.pizzaImg = UIImage(data: data)!
-            }
-        }
+        
         openPizzaSheet()
     }
     
