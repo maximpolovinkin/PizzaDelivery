@@ -14,5 +14,4 @@ struct initial: Codable {
 struct menuItems: Codable {
     var title: String
     var image: String
-    //var imageView: UIImage
 }

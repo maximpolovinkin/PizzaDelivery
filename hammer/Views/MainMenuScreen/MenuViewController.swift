@@ -15,6 +15,7 @@ var table: UITableView = {
 }()
 
 class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, presentorDelegate {
+    
     private var collectionView = bannersCollectionView()
     private var menuCollectionView = MenuCollectionView()
     private let citiController = CitiesViewController()
@@ -26,23 +27,14 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var data = [menuItems]()
     var pizzaImages = [UIImage?]()
     
+    //MARK: - VC lifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         dataWork()
         setViews()
         setConstraints()
         setAppearence()
-     
-    }
-    
-    func loadImages(data: [menuItems]) {
-        for item in data {
-            guard let url = URL(string: item.image) else { return  }
-            if let data = try? Data(contentsOf: url)
-            {
-                pizzaImages.append(UIImage(data: data))
-            }
-        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -52,20 +44,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tabBarItem = UITabBarItem(title: "Меню", image: UIImage(named: "menu"), tag: 0)
     }
     
-    func setNavigationBar() {
-        let navItem = UINavigationItem(title: "")
-        let doneItem = UIBarButtonItem(title: "Москва v", style: UIBarButtonItem.Style.plain, target: self, action: #selector(chooseCity))
-        doneItem.tintColor = .black
-        navItem.leftBarButtonItem = doneItem
-        navBar.setItems([navItem], animated: false)
-        navBar.backgroundColor = .init(named: "Color")
-        self.view.addSubview(navBar)
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
-    }
-    
+    //MARK: - Table View
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = table.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! mainTableTableViewCell
         cell.img.image = pizzaImages[indexPath.row]
@@ -86,16 +65,30 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         openPizzaSheet()
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
+    }
+    
+    //MARK: - Helpers
     @objc func chooseCity() {
         present(citiController, animated: true)
     }
     
-    func presentData(data: [menuItems]) {
-        self.data = data
-        loadImages(data: data)
-        DispatchQueue.main.async {
-            table.reloadData()
-        }
+    func openPizzaSheet() {
+        pizza.modalPresentationStyle = .fullScreen
+        present(pizza, animated: true)
+        
+    }
+    
+    //MARK: - UI Settings
+    func setNavigationBar() {
+        let navItem = UINavigationItem(title: "")
+        let doneItem = UIBarButtonItem(title: "Москва v", style: UIBarButtonItem.Style.plain, target: self, action: #selector(chooseCity))
+        doneItem.tintColor = .black
+        navItem.leftBarButtonItem = doneItem
+        navBar.setItems([navItem], animated: false)
+        navBar.backgroundColor = .init(named: "Color")
+        self.view.addSubview(navBar)
     }
     
     func setViews() {
@@ -104,6 +97,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         view.addSubview(collectionView)
         view.addSubview(menuCollectionView)
     }
+    
     func setConstraints() {
         collectionView.contentInset.left = 5
         menuCollectionView.contentInset.left = 20
@@ -120,11 +114,30 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         menuCollectionView.heightAnchor.constraint(equalToConstant: 42).isActive = true
     }
     
+    //MARK: - To remove to other files
     func setAppearence() {
         view.backgroundColor = .init(named: "Color")
         title = "menu"
         navBar.barTintColor = .init(named: "Color")
         tabBarController?.tabBar.bounds = CGRect(x: 0, y: 0, width: 375, height: 83)
+    }
+    
+    func loadImages(data: [menuItems]) {
+        for item in data {
+            guard let url = URL(string: item.image) else { return  }
+            if let data = try? Data(contentsOf: url)
+            {
+                pizzaImages.append(UIImage(data: data))
+            }
+        }
+    }
+    
+    func presentData(data: [menuItems]) {
+        self.data = data
+        loadImages(data: data)
+        DispatchQueue.main.async {
+            table.reloadData()
+        }
     }
     
     func dataWork() {
@@ -138,10 +151,5 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         menuCollectionView.sett(cells: menu.fetchBanners())
     }
     
-    func openPizzaSheet() {
-        pizza.modalPresentationStyle = .fullScreen
-        present(pizza, animated: true)
-        
-    }
 }
 
