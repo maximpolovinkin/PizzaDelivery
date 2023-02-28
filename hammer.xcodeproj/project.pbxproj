@@ -19,6 +19,10 @@
 		3272E37D28FB225F00D7AF53 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3272E37C28FB225F00D7AF53 /* DataModel.swift */; };
 		3281039529AD29C60080F7CC /* MainMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3281039429AD29C60080F7CC /* MainMenuPresenter.swift */; };
 		3281039829AD41630080F7CC /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3281039729AD41630080F7CC /* ModuleBuilder.swift */; };
+		3281039A29AEAC9B0080F7CC /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3281039929AEAC9B0080F7CC /* ProfilePresenter.swift */; };
+		3281039C29AEACAC0080F7CC /* TrashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3281039B29AEACAC0080F7CC /* TrashPresenter.swift */; };
+		3281039E29AEACC20080F7CC /* ContactsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3281039D29AEACC20080F7CC /* ContactsPresenter.swift */; };
+		328103A029AEACD10080F7CC /* DetailPizzaPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3281039F29AEACD10080F7CC /* DetailPizzaPresenter.swift */; };
 		3290CF3828F8A03E003BA3E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290CF3728F8A03E003BA3E3 /* AppDelegate.swift */; };
 		3290CF3A28F8A03E003BA3E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290CF3928F8A03E003BA3E3 /* SceneDelegate.swift */; };
 		3290CF3C28F8A03E003BA3E3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290CF3B28F8A03E003BA3E3 /* ProfileViewController.swift */; };
@@ -45,6 +49,10 @@
 		3272E37C28FB225F00D7AF53 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		3281039429AD29C60080F7CC /* MainMenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuPresenter.swift; sourceTree = "<group>"; };
 		3281039729AD41630080F7CC /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
+		3281039929AEAC9B0080F7CC /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		3281039B29AEACAC0080F7CC /* TrashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashPresenter.swift; sourceTree = "<group>"; };
+		3281039D29AEACC20080F7CC /* ContactsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsPresenter.swift; sourceTree = "<group>"; };
+		3281039F29AEACD10080F7CC /* DetailPizzaPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPizzaPresenter.swift; sourceTree = "<group>"; };
 		3290CF3428F8A03E003BA3E3 /* hammer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hammer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3290CF3728F8A03E003BA3E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3290CF3928F8A03E003BA3E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +154,7 @@
 		3281038929AD22B50080F7CC /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				3281039B29AEACAC0080F7CC /* TrashPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -162,6 +171,7 @@
 		3281038B29AD231D0080F7CC /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				3281039F29AEACD10080F7CC /* DetailPizzaPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -177,6 +187,7 @@
 		3281038D29AD23300080F7CC /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				3281039D29AEACC20080F7CC /* ContactsPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -192,6 +203,7 @@
 		3281038F29AD23400080F7CC /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				3281039929AEAC9B0080F7CC /* ProfilePresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -358,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3272E36E28F9F57900D7AF53 /* MenuCollectionView.swift in Sources */,
+				3281039C29AEACAC0080F7CC /* TrashPresenter.swift in Sources */,
 				3272E37628FAD55300D7AF53 /* mainTableTableViewCell.swift in Sources */,
 				3290CF3C28F8A03E003BA3E3 /* ProfileViewController.swift in Sources */,
 				3281039829AD41630080F7CC /* ModuleBuilder.swift in Sources */,
@@ -368,12 +381,15 @@
 				3290CF5D28F98193003BA3E3 /* BannersCollectionViewCell.swift in Sources */,
 				3272E37D28FB225F00D7AF53 /* DataModel.swift in Sources */,
 				3290CF4D28F8A215003BA3E3 /* ContactsViewController.swift in Sources */,
+				3281039E29AEACC20080F7CC /* ContactsPresenter.swift in Sources */,
 				3224A8CF296EEF6D009E0D1A /* SupportChatController.swift in Sources */,
+				328103A029AEACD10080F7CC /* DetailPizzaPresenter.swift in Sources */,
 				3290CF4F28F8A245003BA3E3 /* MenuViewController.swift in Sources */,
 				3272E37428FA06BC00D7AF53 /* menuButtons.swift in Sources */,
 				3290CF5128F8A254003BA3E3 /* TrashViewController.swift in Sources */,
 				3272E37028F9FBD900D7AF53 /* BannersModel.swift in Sources */,
 				3290CF3828F8A03E003BA3E3 /* AppDelegate.swift in Sources */,
+				3281039A29AEAC9B0080F7CC /* ProfilePresenter.swift in Sources */,
 				3290CF5B28F98015003BA3E3 /* bannersCollectionView.swift in Sources */,
 				3290CF3A28F8A03E003BA3E3 /* SceneDelegate.swift in Sources */,
 				3272E36C28F9F54400D7AF53 /* MenuCollectionViewCell.swift in Sources */,
