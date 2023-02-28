@@ -14,27 +14,23 @@ var table: UITableView = {
     return table
 }()
 
-class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, presentorDelegate {
+class MenuViewController: UIViewController {
+    var navBar = UINavigationBar(frame: CGRect(x: 0, y: 46, width: UIScreen.main.bounds.width, height: 40))
     
     private var collectionView = bannersCollectionView()
     private var menuCollectionView = MenuCollectionView()
     private let citiController = CitiesViewController()
     let pizza = PizzaViewController()
-    
-    var navBar = UINavigationBar(frame: CGRect(x: 0, y: 46, width: UIScreen.main.bounds.width, height: 40))
-    
-    let presenter = presentor()
-    var data = [menuItems]()
-    var pizzaImages = [UIImage?]()
-    
+    var presenter: MenuViewPresenterProtocol!
+
     //MARK: - VC lifeCycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataWork()
+        
+        table.dataSource = self
+        table.delegate = self
+        
         setViews()
-        setConstraints()
-        setAppearence()
     }
     
     override func viewDidLayoutSubviews() {
@@ -44,32 +40,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tabBarItem = UITabBarItem(title: "Меню", image: UIImage(named: "menu"), tag: 0)
     }
     
-    //MARK: - Table View
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = table.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! mainTableTableViewCell
-        cell.img.image = pizzaImages[indexPath.row]
-        cell.textField.text = data[indexPath.row].title
-        cell.descriptionTextField.text = "Ветчина,шампиньоны, увеличинная порция моцареллы, томатный соус"
-        
-        cell.selectionStyle = UITableViewCell.SelectionStyle.none
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        if let pizzaImg = pizzaImages[indexPath.row] {
-            self.pizza.pizzaImg = pizzaImg
-        }
-        
-        openPizzaSheet()
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
-    }
-    
-    //MARK: - Helpers
+    //MARK: - Actions
     @objc func chooseCity() {
         present(citiController, animated: true)
     }
@@ -93,9 +64,20 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func setViews() {
         setNavigationBar()
+        
         view.addSubview(table)
         view.addSubview(collectionView)
         view.addSubview(menuCollectionView)
+        
+        collectionView.sett(cells: banner.fetchBanners())
+        menuCollectionView.sett(cells: menu.fetchBanners())
+        
+        view.backgroundColor = .init(named: "Color")
+        title = "menu"
+        navBar.barTintColor = .init(named: "Color")
+        tabBarController?.tabBar.bounds = CGRect(x: 0, y: 0, width: 375, height: 83)
+        
+        setConstraints()
     }
     
     func setConstraints() {
@@ -113,43 +95,49 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         menuCollectionView.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 10).isActive = true
         menuCollectionView.heightAnchor.constraint(equalToConstant: 42).isActive = true
     }
-    
-    //MARK: - To remove to other files
-    func setAppearence() {
-        view.backgroundColor = .init(named: "Color")
-        title = "menu"
-        navBar.barTintColor = .init(named: "Color")
-        tabBarController?.tabBar.bounds = CGRect(x: 0, y: 0, width: 375, height: 83)
-    }
-    
-    func loadImages(data: [menuItems]) {
-        for item in data {
-            guard let url = URL(string: item.image) else { return  }
-            if let data = try? Data(contentsOf: url)
-            {
-                pizzaImages.append(UIImage(data: data))
-            }
-        }
-    }
-    
-    func presentData(data: [menuItems]) {
-        self.data = data
-        loadImages(data: data)
-        DispatchQueue.main.async {
-            table.reloadData()
-        }
-    }
-    
-    func dataWork() {
-        table.dataSource = self
-        table.delegate = self
-        
-        presenter.setViewDelegate(delegate: self)
-        presenter.getData()
-        
-        collectionView.sett(cells: banner.fetchBanners())
-        menuCollectionView.sett(cells: menu.fetchBanners())
-    }
-    
 }
 
+//MARK: - Table View
+extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = table.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! mainTableTableViewCell
+   
+        if let image = presenter.images?[indexPath.row],
+           let title = presenter.menuItems?[indexPath.row].title {
+            cell.img.image = image
+            cell.textField.text = title
+        }
+       
+        cell.descriptionTextField.text = "Ветчина,шампиньоны, увеличинная порция моцареллы, томатный соус"
+        
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+//        if let pizzaImg = pizzaImages[indexPath.row] {
+//            self.pizza.pizzaImg = pizzaImg
+//        }
+//
+//        openPizzaSheet()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return presenter.menuItems?.count ?? 0
+    }
+}
+//MARK: - MenuViewProtocol
+extension MenuViewController: MenuViewProtocol {
+    func success() {
+        table.reloadData()
+    }
+    
+    func failure(error: Error) {
+        let alert = UIAlertController(title: "Упс! Возникла ошибка", message: "Перезагрузите приложение", preferredStyle: .alert)
+        show(alert, sender: nil)
+    }
+    
+    
+}

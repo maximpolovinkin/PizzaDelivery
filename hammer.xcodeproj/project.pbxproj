@@ -15,9 +15,10 @@
 		3272E37028F9FBD900D7AF53 /* BannersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3272E36F28F9FBD900D7AF53 /* BannersModel.swift */; };
 		3272E37428FA06BC00D7AF53 /* menuButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3272E37328FA06BC00D7AF53 /* menuButtons.swift */; };
 		3272E37628FAD55300D7AF53 /* mainTableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3272E37528FAD55300D7AF53 /* mainTableTableViewCell.swift */; };
-		3272E37B28FB201F00D7AF53 /* Presentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3272E37A28FB201F00D7AF53 /* Presentor.swift */; };
+		3272E37B28FB201F00D7AF53 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3272E37A28FB201F00D7AF53 /* NetworkService.swift */; };
 		3272E37D28FB225F00D7AF53 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3272E37C28FB225F00D7AF53 /* DataModel.swift */; };
-		3281030B29A3AA870080F7CC /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3281030A29A3AA870080F7CC /* DataManager.swift */; };
+		3281039529AD29C60080F7CC /* MainMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3281039429AD29C60080F7CC /* MainMenuPresenter.swift */; };
+		3281039829AD41630080F7CC /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3281039729AD41630080F7CC /* ModuleBuilder.swift */; };
 		3290CF3828F8A03E003BA3E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290CF3728F8A03E003BA3E3 /* AppDelegate.swift */; };
 		3290CF3A28F8A03E003BA3E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290CF3928F8A03E003BA3E3 /* SceneDelegate.swift */; };
 		3290CF3C28F8A03E003BA3E3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290CF3B28F8A03E003BA3E3 /* ProfileViewController.swift */; };
@@ -40,9 +41,10 @@
 		3272E36F28F9FBD900D7AF53 /* BannersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannersModel.swift; sourceTree = "<group>"; };
 		3272E37328FA06BC00D7AF53 /* menuButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuButtons.swift; sourceTree = "<group>"; };
 		3272E37528FAD55300D7AF53 /* mainTableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainTableTableViewCell.swift; sourceTree = "<group>"; };
-		3272E37A28FB201F00D7AF53 /* Presentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentor.swift; sourceTree = "<group>"; };
+		3272E37A28FB201F00D7AF53 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		3272E37C28FB225F00D7AF53 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		3281030A29A3AA870080F7CC /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		3281039429AD29C60080F7CC /* MainMenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuPresenter.swift; sourceTree = "<group>"; };
+		3281039729AD41630080F7CC /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		3290CF3428F8A03E003BA3E3 /* hammer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hammer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3290CF3728F8A03E003BA3E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3290CF3928F8A03E003BA3E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,70 +71,175 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3272E37728FAE58B00D7AF53 /* Models */ = {
+		3281030C29A3ACC90080F7CC /* MainMenuModule */ = {
 			isa = PBXGroup;
 			children = (
-				3272E36F28F9FBD900D7AF53 /* BannersModel.swift */,
-				3272E37328FA06BC00D7AF53 /* menuButtons.swift */,
-				3272E37C28FB225F00D7AF53 /* DataModel.swift */,
-				3281030A29A3AA870080F7CC /* DataManager.swift */,
+				3281038729AD22A20080F7CC /* Modes */,
+				3281038829AD22A90080F7CC /* Views */,
+				3281039129AD234F0080F7CC /* Presenter */,
 			);
-			path = Models;
+			path = MainMenuModule;
 			sourceTree = "<group>";
 		};
-		3272E37928FAE5AC00D7AF53 /* Presentor */ = {
+		3281030D29A3AD440080F7CC /* ContactsModule */ = {
 			isa = PBXGroup;
 			children = (
-				3272E37A28FB201F00D7AF53 /* Presentor.swift */,
+				3281038A29AD23120080F7CC /* Views */,
+				3281038D29AD23300080F7CC /* Presenter */,
 			);
-			path = Presentor;
+			path = ContactsModule;
 			sourceTree = "<group>";
 		};
-		3281030C29A3ACC90080F7CC /* MainMenuScreen */ = {
+		3281030E29A3AD650080F7CC /* TrashModule */ = {
+			isa = PBXGroup;
+			children = (
+				3281038C29AD232B0080F7CC /* Views */,
+				3281038929AD22B50080F7CC /* Presenter */,
+			);
+			path = TrashModule;
+			sourceTree = "<group>";
+		};
+		3281030F29A3AD780080F7CC /* ProfileModule */ = {
+			isa = PBXGroup;
+			children = (
+				3281038E29AD233C0080F7CC /* Views */,
+				3281038F29AD23400080F7CC /* Presenter */,
+			);
+			path = ProfileModule;
+			sourceTree = "<group>";
+		};
+		3281031029A3AD8B0080F7CC /* DetailPizzaModule */ = {
+			isa = PBXGroup;
+			children = (
+				3281039029AD234A0080F7CC /* Views */,
+				3281038B29AD231D0080F7CC /* Presenter */,
+			);
+			path = DetailPizzaModule;
+			sourceTree = "<group>";
+		};
+		3281038629AD226B0080F7CC /* ServiceLayer */ = {
+			isa = PBXGroup;
+			children = (
+				3272E37A28FB201F00D7AF53 /* NetworkService.swift */,
+			);
+			path = ServiceLayer;
+			sourceTree = "<group>";
+		};
+		3281038729AD22A20080F7CC /* Modes */ = {
+			isa = PBXGroup;
+			children = (
+				3281039329AD23760080F7CC /* CustomUI */,
+				3281039229AD236A0080F7CC /* DataModel */,
+			);
+			path = Modes;
+			sourceTree = "<group>";
+		};
+		3281038829AD22A90080F7CC /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				3207BA8A29770E2B00D85DE0 /* CitiesViewController.swift */,
 				3290CF4E28F8A245003BA3E3 /* MenuViewController.swift */,
-				3290CF5C28F98193003BA3E3 /* BannersCollectionViewCell.swift */,
-				3272E37528FAD55300D7AF53 /* mainTableTableViewCell.swift */,
-				3272E36B28F9F54400D7AF53 /* MenuCollectionViewCell.swift */,
-				3272E36D28F9F57900D7AF53 /* MenuCollectionView.swift */,
-				3290CF5A28F98015003BA3E3 /* bannersCollectionView.swift */,
 			);
-			path = MainMenuScreen;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		3281030D29A3AD440080F7CC /* ContactsScreen */ = {
+		3281038929AD22B50080F7CC /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3281038A29AD23120080F7CC /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				3290CF4C28F8A215003BA3E3 /* ContactsViewController.swift */,
 				3224A8CE296EEF6D009E0D1A /* SupportChatController.swift */,
 			);
-			path = ContactsScreen;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		3281030E29A3AD650080F7CC /* TrashScreen */ = {
+		3281038B29AD231D0080F7CC /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3281038C29AD232B0080F7CC /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				3290CF5028F8A254003BA3E3 /* TrashViewController.swift */,
 			);
-			path = TrashScreen;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		3281030F29A3AD780080F7CC /* ProfileScreen */ = {
+		3281038D29AD23300080F7CC /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3281038E29AD233C0080F7CC /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				3290CF3B28F8A03E003BA3E3 /* ProfileViewController.swift */,
 			);
-			path = ProfileScreen;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		3281031029A3AD8B0080F7CC /* DetailPizzaScreen */ = {
+		3281038F29AD23400080F7CC /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3281039029AD234A0080F7CC /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				3224A8D0296F1DC1009E0D1A /* PizzaViewController.swift */,
 			);
-			path = DetailPizzaScreen;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3281039129AD234F0080F7CC /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3281039429AD29C60080F7CC /* MainMenuPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3281039229AD236A0080F7CC /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				3272E37C28FB225F00D7AF53 /* DataModel.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		3281039329AD23760080F7CC /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				3272E37328FA06BC00D7AF53 /* menuButtons.swift */,
+				3272E36F28F9FBD900D7AF53 /* BannersModel.swift */,
+				3272E37528FAD55300D7AF53 /* mainTableTableViewCell.swift */,
+				3272E36B28F9F54400D7AF53 /* MenuCollectionViewCell.swift */,
+				3290CF5C28F98193003BA3E3 /* BannersCollectionViewCell.swift */,
+				3290CF5A28F98015003BA3E3 /* bannersCollectionView.swift */,
+				3272E36D28F9F57900D7AF53 /* MenuCollectionView.swift */,
+			);
+			path = CustomUI;
+			sourceTree = "<group>";
+		};
+		3281039629AD412C0080F7CC /* AssemblyLayer */ = {
+			isa = PBXGroup;
+			children = (
+				3281039729AD41630080F7CC /* ModuleBuilder.swift */,
+			);
+			path = AssemblyLayer;
 			sourceTree = "<group>";
 		};
 		3290CF2B28F8A03E003BA3E3 = {
@@ -154,29 +261,29 @@
 		3290CF3628F8A03E003BA3E3 /* hammer */ = {
 			isa = PBXGroup;
 			children = (
-				3272E37928FAE5AC00D7AF53 /* Presentor */,
-				3272E37728FAE58B00D7AF53 /* Models */,
-				3290CF4B28F8A1F1003BA3E3 /* Views */,
-				3290CF3728F8A03E003BA3E3 /* AppDelegate.swift */,
+				3281039629AD412C0080F7CC /* AssemblyLayer */,
+				3281038629AD226B0080F7CC /* ServiceLayer */,
+				3290CF4B28F8A1F1003BA3E3 /* Storyboard */,
+				3281031029A3AD8B0080F7CC /* DetailPizzaModule */,
+				3281030D29A3AD440080F7CC /* ContactsModule */,
+				3281030E29A3AD650080F7CC /* TrashModule */,
+				3281030F29A3AD780080F7CC /* ProfileModule */,
+				3281030C29A3ACC90080F7CC /* MainMenuModule */,
 				3290CF3928F8A03E003BA3E3 /* SceneDelegate.swift */,
+				3290CF3728F8A03E003BA3E3 /* AppDelegate.swift */,
 				3290CF4028F8A03F003BA3E3 /* Assets.xcassets */,
 				3290CF4528F8A03F003BA3E3 /* Info.plist */,
 			);
 			path = hammer;
 			sourceTree = "<group>";
 		};
-		3290CF4B28F8A1F1003BA3E3 /* Views */ = {
+		3290CF4B28F8A1F1003BA3E3 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
 				3290CF3D28F8A03E003BA3E3 /* Main.storyboard */,
 				3290CF4228F8A03F003BA3E3 /* LaunchScreen.storyboard */,
-				3281031029A3AD8B0080F7CC /* DetailPizzaScreen */,
-				3281030F29A3AD780080F7CC /* ProfileScreen */,
-				3281030E29A3AD650080F7CC /* TrashScreen */,
-				3281030D29A3AD440080F7CC /* ContactsScreen */,
-				3281030C29A3ACC90080F7CC /* MainMenuScreen */,
 			);
-			path = Views;
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,8 +360,10 @@
 				3272E36E28F9F57900D7AF53 /* MenuCollectionView.swift in Sources */,
 				3272E37628FAD55300D7AF53 /* mainTableTableViewCell.swift in Sources */,
 				3290CF3C28F8A03E003BA3E3 /* ProfileViewController.swift in Sources */,
+				3281039829AD41630080F7CC /* ModuleBuilder.swift in Sources */,
 				3207BA8B29770E2B00D85DE0 /* CitiesViewController.swift in Sources */,
-				3272E37B28FB201F00D7AF53 /* Presentor.swift in Sources */,
+				3272E37B28FB201F00D7AF53 /* NetworkService.swift in Sources */,
+				3281039529AD29C60080F7CC /* MainMenuPresenter.swift in Sources */,
 				3224A8D1296F1DC1009E0D1A /* PizzaViewController.swift in Sources */,
 				3290CF5D28F98193003BA3E3 /* BannersCollectionViewCell.swift in Sources */,
 				3272E37D28FB225F00D7AF53 /* DataModel.swift in Sources */,
@@ -264,7 +373,6 @@
 				3272E37428FA06BC00D7AF53 /* menuButtons.swift in Sources */,
 				3290CF5128F8A254003BA3E3 /* TrashViewController.swift in Sources */,
 				3272E37028F9FBD900D7AF53 /* BannersModel.swift in Sources */,
-				3281030B29A3AA870080F7CC /* DataManager.swift in Sources */,
 				3290CF3828F8A03E003BA3E3 /* AppDelegate.swift in Sources */,
 				3290CF5B28F98015003BA3E3 /* bannersCollectionView.swift in Sources */,
 				3290CF3A28F8A03E003BA3E3 /* SceneDelegate.swift in Sources */,

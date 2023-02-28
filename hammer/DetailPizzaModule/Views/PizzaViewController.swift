@@ -118,6 +118,5 @@ class PizzaViewController: UIViewController {
         view.addSubview(descriptionView)
         view.addSubview(pizzaDescription)
         setActions()
-        
     }
 }
