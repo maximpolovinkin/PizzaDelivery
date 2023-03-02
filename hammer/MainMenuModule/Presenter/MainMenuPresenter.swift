@@ -14,7 +14,7 @@ protocol MenuViewProtocol: AnyObject {
 }
 
 protocol MenuViewPresenterProtocol: AnyObject {
-    init(view: MenuViewProtocol, networkServise: NetworkServiceProtocol)
+    init(view: MenuViewProtocol, networkServise: NetworkServiceProtocol, router: RouterProtocol)
     func getMenu()
     func loadImages(items: [menuItems]?)
     var menuItems: [menuItems]? {get set}
@@ -28,10 +28,12 @@ class MainMenuPresenter: MenuViewPresenterProtocol {
     weak var view: MenuViewProtocol?
     var menuItems: [menuItems]?
     var images: [UIImage]?
+    var router: RouterProtocol?
     
-    required init(view: MenuViewProtocol, networkServise: NetworkServiceProtocol) {
+    required init(view: MenuViewProtocol, networkServise: NetworkServiceProtocol, router: RouterProtocol) {
         self.view = view
         self.networkServise = networkServise
+        self.router = router
         
         getMenu()
         //loadImages(items: menuItems)
@@ -61,7 +63,7 @@ class MainMenuPresenter: MenuViewPresenterProtocol {
                     guard let url = URL(string: item.image) else { return  }
                     if let data = try? Data(contentsOf: url)
                     {
-                        var image = UIImage(data: data)
+                        let image = UIImage(data: data)
                         DispatchQueue.main.async {
                             if self.images != nil{
                                 self.images! += [image!]

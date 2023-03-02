@@ -16,6 +16,7 @@ class PizzaViewController: UIViewController {
     var pizzaUrl = ""
     var pizzaDescription = UILabel(frame: CGRect(x: 15, y: 475, width: 360, height: 25))
     var data  = menuItems(title: "asda", image: "asdas")
+    var presenter: DetailViewPresenterProtocol!
    
    
     weak var delegate: PizzaViewControllerrDelegate?
@@ -93,7 +94,7 @@ class PizzaViewController: UIViewController {
     }
     
     @objc func moveToTrash() {
-        var pizza = str.instantiateViewController(withIdentifier: "vc2") as? TrashViewController
+        let pizza = str.instantiateViewController(withIdentifier: "vc2") as? TrashViewController
         data.title = "lllll"
         pizza?.setTrash(data: data)
         self.delegate?.fillTheTableWith(pizzaImg: "ads", pizzaDescription: "asd")
@@ -118,5 +119,13 @@ class PizzaViewController: UIViewController {
         view.addSubview(descriptionView)
         view.addSubview(pizzaDescription)
         setActions()
+    }
+}
+
+
+ //MARK: - DetailViewProtocol
+extension PizzaViewController: DetailViewProtocol {
+    func setDetailInfo(menuItem: menuItems?) {
+       
     }
 }

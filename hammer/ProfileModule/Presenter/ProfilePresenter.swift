@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+// Module is not done at all
+
+protocol ProfileViewProtocol {
+    //Something
+}
+
+protocol ProfileViewPresenterProtocol {
+    
+}
+
+class ProfilePresenter {
+    
+}

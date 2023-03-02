@@ -23,6 +23,7 @@
 		3281039C29AEACAC0080F7CC /* TrashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3281039B29AEACAC0080F7CC /* TrashPresenter.swift */; };
 		3281039E29AEACC20080F7CC /* ContactsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3281039D29AEACC20080F7CC /* ContactsPresenter.swift */; };
 		328103A029AEACD10080F7CC /* DetailPizzaPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3281039F29AEACD10080F7CC /* DetailPizzaPresenter.swift */; };
+		328103A229B1196D0080F7CC /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328103A129B1196D0080F7CC /* Router.swift */; };
 		3290CF3828F8A03E003BA3E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290CF3728F8A03E003BA3E3 /* AppDelegate.swift */; };
 		3290CF3A28F8A03E003BA3E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290CF3928F8A03E003BA3E3 /* SceneDelegate.swift */; };
 		3290CF3C28F8A03E003BA3E3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290CF3B28F8A03E003BA3E3 /* ProfileViewController.swift */; };
@@ -53,6 +54,7 @@
 		3281039B29AEACAC0080F7CC /* TrashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashPresenter.swift; sourceTree = "<group>"; };
 		3281039D29AEACC20080F7CC /* ContactsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsPresenter.swift; sourceTree = "<group>"; };
 		3281039F29AEACD10080F7CC /* DetailPizzaPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPizzaPresenter.swift; sourceTree = "<group>"; };
+		328103A129B1196D0080F7CC /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		3290CF3428F8A03E003BA3E3 /* hammer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hammer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3290CF3728F8A03E003BA3E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3290CF3928F8A03E003BA3E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,7 +84,7 @@
 		3281030C29A3ACC90080F7CC /* MainMenuModule */ = {
 			isa = PBXGroup;
 			children = (
-				3281038729AD22A20080F7CC /* Modes */,
+				3281038729AD22A20080F7CC /* Models */,
 				3281038829AD22A90080F7CC /* Views */,
 				3281039129AD234F0080F7CC /* Presenter */,
 			);
@@ -133,13 +135,13 @@
 			path = ServiceLayer;
 			sourceTree = "<group>";
 		};
-		3281038729AD22A20080F7CC /* Modes */ = {
+		3281038729AD22A20080F7CC /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				3281039329AD23760080F7CC /* CustomUI */,
 				3281039229AD236A0080F7CC /* DataModel */,
 			);
-			path = Modes;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		3281038829AD22A90080F7CC /* Views */ = {
@@ -250,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				3281039729AD41630080F7CC /* ModuleBuilder.swift */,
+				328103A129B1196D0080F7CC /* Router.swift */,
 			);
 			path = AssemblyLayer;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 			files = (
 				3272E36E28F9F57900D7AF53 /* MenuCollectionView.swift in Sources */,
 				3281039C29AEACAC0080F7CC /* TrashPresenter.swift in Sources */,
+				328103A229B1196D0080F7CC /* Router.swift in Sources */,
 				3272E37628FAD55300D7AF53 /* mainTableTableViewCell.swift in Sources */,
 				3290CF3C28F8A03E003BA3E3 /* ProfileViewController.swift in Sources */,
 				3281039829AD41630080F7CC /* ModuleBuilder.swift in Sources */,

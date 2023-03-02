@@ -38,7 +38,7 @@ class MenuCollectionView: UICollectionView , UICollectionViewDelegate, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var cell = dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.reuseId, for: indexPath) as! MenuCollectionViewCell
+        let cell = dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.reuseId, for: indexPath) as! MenuCollectionViewCell
         
         cell.imageView.image = cells[indexPath.row].image
         cell.layer.cornerRadius = cell.bounds.height / 2
