@@ -16,15 +16,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         
-        let moduleBuilder = ModuleBuilder()
-        let VC = UIViewController()
-        let router = Router(viewController: VC, assemblyBuilder: moduleBuilder)
+//        let moduleBuilder = ModuleBuilder()
+//        let VC = UIViewController()
+//        let router = Router(viewController: VC, assemblyBuilder: moduleBuilder)
         
-        //let mainVc = moduleBuilder.createMenuModule(router: <#RouterProtocol#>)
-        //  let router = Router(viewController: mainVc, assemblyBuilder: moduleBuilder)
+        let mainVc = ModuleBuilder.createMenuModule()
+       
         
-        router.initialVC()
-        window?.rootViewController = VC
+        //router.initialVC()
+        window?.rootViewController = mainVc
         window?.makeKeyAndVisible()
     }
 

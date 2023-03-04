@@ -11,7 +11,7 @@ import UIKit
 //    func fillTheTableWith(pizzaImg: String, pizzaDescription: String)
 //}
 
-class TrashViewController: UIViewController,UITableViewDataSource, UITableViewDelegate,  PizzaViewControllerrDelegate {
+class TrashViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
     
     private var pizza = PizzaViewController()
     var a = 0
@@ -26,9 +26,8 @@ class TrashViewController: UIViewController,UITableViewDataSource, UITableViewDe
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        pizza.delegate = self
-        table.reloadData()
-        print(items.count)
+
+      
     }
     
     override func viewDidLayoutSubviews() {

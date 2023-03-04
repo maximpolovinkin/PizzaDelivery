@@ -107,21 +107,20 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
             cell.img.image = image
             cell.textField.text = title
         }
-       
         cell.descriptionTextField.text = "Ветчина,шампиньоны, увеличинная порция моцареллы, томатный соус"
-        
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let menuItem = presenter.menuItems?[indexPath.row]
+        let image = presenter.images?[indexPath.row]
         
-//        if let pizzaImg = pizzaImages[indexPath.row] {
-//            self.pizza.pizzaImg = pizzaImg
-//        }
-//
-//        openPizzaSheet()
+        let detaiVC = ModuleBuilder.createDetailModule(menuItem: menuItem, image: image)
+        detaiVC.modalPresentationStyle = .fullScreen
+        
+        present(detaiVC, animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

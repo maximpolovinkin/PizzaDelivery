@@ -6,23 +6,21 @@
 //
 
 import UIKit
-protocol PizzaViewControllerrDelegate: AnyObject {
-    func fillTheTableWith(pizzaImg: String, pizzaDescription: String)
-}
 
 class PizzaViewController: UIViewController {
-    
-    var pizzaImg = UIImage()
-    var pizzaUrl = ""
     var pizzaDescription = UILabel(frame: CGRect(x: 15, y: 475, width: 360, height: 25))
-    var data  = menuItems(title: "asda", image: "asdas")
     var presenter: DetailViewPresenterProtocol!
-   
-   
-    weak var delegate: PizzaViewControllerrDelegate?
-    let str = UIStoryboard(name: "Main", bundle: nil)
+
+     //MARK:  - VC Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setUpViews()
+        presenter.setDetailInfo()
+        
+        view.backgroundColor = .white
+    }
     
-    
+     //MARK: - UI Elements
     let closeBtn : UIButton = {
         let closeBtn = UIButton(type: .close)
         closeBtn.frame = CGRect(x: 15, y: 45, width: 45, height: 45)
@@ -31,18 +29,6 @@ class PizzaViewController: UIViewController {
         
         return closeBtn
     }()
-  
-    override func viewWillAppear(_ animated: Bool) {
-        setContent()
-      
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setUpViews()
-        
-        view.backgroundColor = .white
-    }
     
     let doughChanger : UISegmentedControl = {
         let doughChanger = UISegmentedControl(items: ["Традиционное", "Тонкое"])
@@ -86,20 +72,12 @@ class PizzaViewController: UIViewController {
         
         return toTrashButton
     }()
-    
-    func setContent() {
-        pizzaImageView.image = pizzaImg
-        pizzaDescription.font = .boldSystemFont(ofSize: 19)
-        descriptionView.text = "Ветчина,шампиньоны, увеличинная порция моцареллы, томатный соус"
-    }
-    
+   
     @objc func moveToTrash() {
-        let pizza = str.instantiateViewController(withIdentifier: "vc2") as? TrashViewController
-        data.title = "lllll"
-        pizza?.setTrash(data: data)
-        self.delegate?.fillTheTableWith(pizzaImg: "ads", pizzaDescription: "asd")
+       
     }
 
+     //MARK: - Helpers
     func setActions(){ // was added cuz caught unrecognized selector sent to class
         closeBtn.addTarget(self, action: #selector(close), for: .touchUpInside)
         toTrashButton.addTarget(self, action: #selector(moveToTrash), for: .touchUpInside)
@@ -109,7 +87,6 @@ class PizzaViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
 
-    
     func setUpViews() {
         view.addSubview(doughChanger)
         view.addSubview(sizeChanger)
@@ -125,7 +102,11 @@ class PizzaViewController: UIViewController {
 
  //MARK: - DetailViewProtocol
 extension PizzaViewController: DetailViewProtocol {
-    func setDetailInfo(menuItem: menuItems?) {
-       
+    func setDetailInfo(menuItem: menuItems?, image: UIImage?) {
+        guard let menuItem = menuItem, let image = image else { return }
+        pizzaImageView.image = image
+        pizzaDescription.font = .boldSystemFont(ofSize: 19)
+        descriptionView.text = "Ветчина,шампиньоны, увеличинная порция моцареллы, томатный соус"
+        
     }
 }
