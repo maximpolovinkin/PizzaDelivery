@@ -22,7 +22,7 @@ class MenuViewController: UIViewController {
     private let citiController = CitiesViewController()
     let pizza = PizzaViewController()
     var presenter: MenuViewPresenterProtocol!
-
+    
     //MARK: - VC lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,15 +101,18 @@ class MenuViewController: UIViewController {
 extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = table.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! mainTableTableViewCell
-   
-        if let image = presenter.images?[indexPath.row],
-           let title = presenter.menuItems?[indexPath.row].title {
-            cell.img.image = image
+        
+        presenter.getImage(forKey: indexPath.row) { image in
+            if let image = image {
+                cell.img.image = image
+            }
+        }
+        
+        if let title = presenter.menuItems?[indexPath.row].title {
             cell.textField.text = title
         }
         cell.descriptionTextField.text = "Ветчина,шампиньоны, увеличинная порция моцареллы, томатный соус"
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
-        
         return cell
     }
     

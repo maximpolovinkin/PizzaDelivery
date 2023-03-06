@@ -16,9 +16,10 @@ protocol MenuViewProtocol: AnyObject {
 protocol MenuViewPresenterProtocol: AnyObject {
     init(view: MenuViewProtocol, networkServise: NetworkServiceProtocol)
     func getMenu()
-    func loadImages(items: [menuItems]?)
+    func getImage(forKey: Int, completion: @escaping ((UIImage?) -> Void))
     var menuItems: [menuItems]? {get set}
     var images: [UIImage]? {get set}
+  
 }
 
 class MainMenuPresenter: MenuViewPresenterProtocol {
@@ -26,6 +27,7 @@ class MainMenuPresenter: MenuViewPresenterProtocol {
     weak var view: MenuViewProtocol?
     var menuItems: [menuItems]?
     var images: [UIImage]?
+    
    // var router: RouterProtocol?
     
     required init(view: MenuViewProtocol, networkServise: NetworkServiceProtocol) {
@@ -34,9 +36,9 @@ class MainMenuPresenter: MenuViewPresenterProtocol {
         //self.router = router
         
         getMenu()
-        //loadImages(items: menuItems)
     }
     
+     //MARK: Get menu data from API
     func getMenu() {
         networkServise.getData {[weak self] result in
             guard let self = self else { return }
@@ -45,7 +47,6 @@ class MainMenuPresenter: MenuViewPresenterProtocol {
                 switch result {
                 case .success(let data):
                     self.menuItems = data
-                    self.loadImages(items: data)
                     self.view?.success()
                 case .failure(let error):
                     self.view?.failure(error: error)
@@ -54,24 +55,22 @@ class MainMenuPresenter: MenuViewPresenterProtocol {
         }
     }
     
-    func loadImages(items: [menuItems]?) {
-        DispatchQueue.global().async {
-            if let items = items {
-                for item in items {
-                    guard let url = URL(string: item.image) else { return  }
-                    if let data = try? Data(contentsOf: url)
-                    {
-                        let image = UIImage(data: data)
-                        DispatchQueue.main.async {
-                            if self.images != nil{
-                                self.images! += [image!]
-                            } else {
-                                self.images = [image!]
-                            }
-                        }
+    //MARK: Get images from cache if they are there otherwise loading from url and save
+    func getImage(forKey index: Int, completion: @escaping ((UIImage?) -> Void)) {
+        if let menuItems = self.menuItems {
+            if let image = networkServise.cachedImages?.object(forKey: menuItems[index].image as NSString) {
+                print("pizda")
+              completion(image)
+            } else {
+                networkServise.loadImage(key: menuItems[index].image) { image in
+                    DispatchQueue.main.async {
+                        print("govno")
+                        completion(image)
                     }
                 }
             }
         }
     }
+    
+    
 }
