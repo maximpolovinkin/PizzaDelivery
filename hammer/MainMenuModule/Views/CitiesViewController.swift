@@ -8,8 +8,6 @@
 import UIKit
 
 class CitiesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-  
-    
     private let cities = ["Москва", "Ковров", "Унеча", "Владивосток", "Абакан", "Киров", "Крым", "Симферополь", "Владимир", "Выкса", "Нижний Новгород", "Брянск", "Москва", "Ковров", "Унеча", "Владивосток", "Абакан", "Киров", "Крым", "Симферополь", "Владимир", "Выкса", "Нижний Новгород", "Брянск"]
     
     private var filteredCities = [String]()
@@ -17,10 +15,10 @@ class CitiesViewController: UIViewController, UITableViewDataSource, UITableView
     private var citiesTable: UITableView = {
         let citiesTable = UITableView(frame: CGRect(x: 0, y: 0, width: 770, height: 270), style: .grouped)
         citiesTable.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-       
+        
         return citiesTable
     }()
-
+    
     private let searchContr = UISearchController(searchResultsController: nil)
     private var searchIsEmpty : Bool {
         guard let text = searchContr.searchBar.text else { return false }
@@ -41,7 +39,7 @@ class CitiesViewController: UIViewController, UITableViewDataSource, UITableView
         navigationBar.setItems([navItem], animated: false)
     }
     
-   
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         citiesTable.frame = CGRect(x: 0, y: 57, width: view.bounds.width, height: view.bounds.height)
@@ -52,32 +50,29 @@ class CitiesViewController: UIViewController, UITableViewDataSource, UITableView
         setUpViews()
         citiesTable.tableHeaderView = searchContr.searchBar
         navigationItem.hidesSearchBarWhenScrolling = false
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
+        
     }
     
-     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         if isFiltering {
-             return filteredCities.count
-         }
-         return cities.count
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering {
+            return filteredCities.count
+        }
+        return cities.count
     }
     
-     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-         if isFiltering{
-             let city = filteredCities[indexPath.row]
-             cell.textLabel?.text = city
-         } else {
-             let city = cities[indexPath.row]
-             cell.textLabel?.text = city
-         }
-        
-        
+        if isFiltering{
+            let city = filteredCities[indexPath.row]
+            cell.textLabel?.text = city
+        } else {
+            let city = cities[indexPath.row]
+            cell.textLabel?.text = city
+        }
         return cell
     }
     
@@ -99,8 +94,6 @@ class CitiesViewController: UIViewController, UITableViewDataSource, UITableView
         //Table
         citiesTable.dataSource = self
         citiesTable.delegate = self
-       
-        
     }
 }
 
@@ -108,11 +101,9 @@ extension CitiesViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         filterData(searchQuery: searchController.searchBar.text!)
     }
-
+    
     private func filterData(searchQuery: String) {
         filteredCities = cities.filter{$0.lowercased().contains(searchQuery.lowercased())}
-        
         citiesTable.reloadData()
     }
-
 }

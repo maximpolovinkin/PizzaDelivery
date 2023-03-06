@@ -118,9 +118,10 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let menuItem = presenter.menuItems?[indexPath.row]
-        let image = presenter.images?[indexPath.row]
-        
-        let detaiVC = ModuleBuilder.createDetailModule(menuItem: menuItem, image: image)
+        let cell = table.cellForRow(at: indexPath) as! mainTableTableViewCell
+        let img = cell.img.image
+
+        let detaiVC = ModuleBuilder.createDetailModule(menuItem: menuItem, image: img)
         detaiVC.modalPresentationStyle = .fullScreen
         
         present(detaiVC, animated: true)

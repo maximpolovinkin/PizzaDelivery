@@ -14,6 +14,7 @@ protocol AssamblyBuilderProtocol {
 }
 
 class ModuleBuilder: NSObject, AssamblyBuilderProtocol {
+     //MARK: Detail pizza module
      static func createDetailModule(menuItem: menuItems?, image: UIImage?) -> UIViewController {
         let view =  PizzaViewController()
         let networkService = NetworkService()
@@ -23,11 +24,10 @@ class ModuleBuilder: NSObject, AssamblyBuilderProtocol {
         
         return view
     }
-    
+    //MARK: Main menu module
     static func createMenuModule() -> UIViewController {
         let view =  MenuViewController()
         let networkService = NetworkService()
-     
         let presenter = MainMenuPresenter(view: view, networkServise: networkService)
         
         view.presenter = presenter

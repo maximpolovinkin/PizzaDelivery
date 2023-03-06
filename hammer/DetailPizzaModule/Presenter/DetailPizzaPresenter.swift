@@ -9,12 +9,12 @@ import Foundation
 import UIKit
 
 protocol DetailViewProtocol: AnyObject {
-    func setDetailInfo(menuItem: menuItems?, image: UIImage?)// можно добавить в параметры картинку - если есть в кеше - суем из кеша, иначе в запрос
+    func setDetailInfo(menuItem: menuItems?, image: UIImage?)
 }
 
 protocol DetailViewPresenterProtocol {
     init(view: DetailViewProtocol, menuItem: menuItems?, networkingService: NetworkServiceProtocol, image: UIImage?)
-    func setDetailInfo()// можно добавить в параметры картинку - если есть в кеше - суем из кеша, иначе в запрос
+    func setDetailInfo()
 }
 
 class DetailPizzaPresenter: DetailViewPresenterProtocol {

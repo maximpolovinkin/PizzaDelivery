@@ -31,6 +31,7 @@ class NetworkService: NetworkServiceProtocol {
                 do{
                     let data = try JSONDecoder().decode(initial.self, from: data!)
                     DispatchQueue.main.async {
+                        print(data.menuItems)
                         completion(.success(data.menuItems))
                     }
                     
