@@ -7,10 +7,12 @@
 
 import UIKit
 
-class ContactsViewController: UIViewController {
+class ContactsViewController: UIViewController, ContactsViewProtocol {
     
     let chatViewController = SupportChatController()
+    var presenter: ContactsViewPresenterProtocol!
 
+     //MARK: -  UI Settings
     let mapButton : UIButton = {
         let button = UIButton(frame: CGRect(x: 92, y: 200, width: 210, height: 50))
         button.setTitleColor(.init(named: "Color"), for: .normal)
@@ -74,6 +76,17 @@ class ContactsViewController: UIViewController {
         return imageView
     }()
     
+    func setUpViews() {
+        view.addSubview(imageView)
+        view.addSubview(mapButton)
+        view.addSubview(supportLabel)
+        buttonsStack.addSubview(callButton)
+        buttonsStack.addSubview(chatButton)
+        
+        view.addSubview(buttonsStack)
+    }
+
+     //MARK: - VC Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -88,37 +101,22 @@ class ContactsViewController: UIViewController {
         tabBarItem = UITabBarItem(title: "Контакты", image: UIImage(named: "contacts"), tag: 0)
     }
     
-    func setUpViews() {
-        view.addSubview(imageView)
-        view.addSubview(mapButton)
-        view.addSubview(supportLabel)
-        buttonsStack.addSubview(callButton)
-        buttonsStack.addSubview(chatButton)
-        
-        view.addSubview(buttonsStack)
-    }
-    
+    //MARK: - Actions
     func setActions(){ // was added cuz caught unrecognized selector sent to class
         mapButton.addTarget(self, action: #selector(openURL), for: .touchUpInside)
         callButton.addTarget(self, action: #selector(call), for: .touchUpInside)
         chatButton.addTarget(self, action: #selector(startChat), for: .touchUpInside)
     }
-    
+
     @objc func openURL() {
-        if let url = URL(string: "https://yandex.ru/maps/213/moscow/chain/dodo_picca/70891266502/?ll=37.644081%2C55.771667&sll=37.644081%2C55.771512&z=11"){
-            UIApplication.shared.openURL(url)
-        }
+        presenter.didTapURL()
     }
     
     @objc func call() {
-        let url = URL(string: "telprompt://+79000000000")!
-                
-        if UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.openURL(url)
-        }
+        presenter.didTapCall()
     }
     
     @objc func startChat() {
-        present(chatViewController, animated: true)
+        presenter.didTapChat()
     }
 }

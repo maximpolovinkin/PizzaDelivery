@@ -10,7 +10,7 @@ import UIKit
 var table: UITableView = {
     let table = UITableView(frame: CGRect(x: 0, y: 329, width: 0, height: 570), style: .plain)
     table.register(mainTableTableViewCell.self, forCellReuseIdentifier: "cell")
-    
+
     return table
 }()
 
@@ -43,12 +43,6 @@ class MenuViewController: UIViewController {
     //MARK: - Actions
     @objc func chooseCity() {
         present(citiController, animated: true)
-    }
-    
-    func openPizzaSheet() {
-        pizza.modalPresentationStyle = .fullScreen
-        present(pizza, animated: true)
-        
     }
     
     //MARK: - UI Settings
@@ -121,16 +115,14 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = table.cellForRow(at: indexPath) as! mainTableTableViewCell
         let img = cell.img.image
 
-        let detaiVC = ModuleBuilder.createDetailModule(menuItem: menuItem, image: img)
-        detaiVC.modalPresentationStyle = .fullScreen
-        
-        present(detaiVC, animated: true)
+        presenter.didTapCell(menuItem: menuItem, image: img)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter.menuItems?.count ?? 0
     }
 }
+
 //MARK: - MenuViewProtocol
 extension MenuViewController: MenuViewProtocol {
     func success() {

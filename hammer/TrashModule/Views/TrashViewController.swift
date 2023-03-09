@@ -7,27 +7,17 @@
 
 import UIKit
 
-//protocol TrashViewControllerrDelegate: AnyObject {
-//    func fillTheTableWith(pizzaImg: String, pizzaDescription: String)
-//}
-
-class TrashViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
+class TrashViewController: UIViewController, TrashViewProtocol {
     
     private var pizza = PizzaViewController()
-    var a = 0
-    var items = [menuItems]()
-    var text = ""
+    var presenter: TrashViewPresenter?
+
     
-    
+    //MARK: - VC Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setUpTable()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-
-      
     }
     
     override func viewDidLayoutSubviews() {
@@ -35,9 +25,14 @@ class TrashViewController: UIViewController,UITableViewDataSource, UITableViewDe
         tabBarItem = UITabBarItem(title: "Корзина", image: UIImage(named: "trash"), tag: 0)
     }
     
-    func setTrash(data: menuItems){
-        items.append(data)
-    }
+    
+    //MARK: - UI Settings
+    private var table: UITableView = {
+        let table = UITableView(frame: CGRect(x: 0, y: 329, width: 150, height: 570), style: .plain)
+        table.register(mainTableTableViewCell.self, forCellReuseIdentifier: "cell")
+        
+        return table
+    }()
     
     func setUpTable() {
         view.addSubview(table)
@@ -47,24 +42,16 @@ class TrashViewController: UIViewController,UITableViewDataSource, UITableViewDe
         table.rowHeight = 196
         table.backgroundColor = .red
     }
-    
-    func fillTheTableWith(pizzaImg: String, pizzaDescription: String) {
-        print(pizzaImg)
+}
+
+//MARK: - Table View
+extension TrashViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
     }
     
-    private var table: UITableView = {
-       let table = UITableView(frame: CGRect(x: 0, y: 329, width: 150, height: 570), style: .plain)
-       table.register(mainTableTableViewCell.self, forCellReuseIdentifier: "cell")
-       
-       return table
-   }()
-   
-   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return 10
-   }
-   
-   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       let cell = table.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! mainTableTableViewCell
-       return cell
-   }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = table.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! mainTableTableViewCell
+        return cell
+    }
 }

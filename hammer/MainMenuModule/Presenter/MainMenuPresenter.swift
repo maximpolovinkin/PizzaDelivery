@@ -14,11 +14,12 @@ protocol MenuViewProtocol: AnyObject {
 }
 
 protocol MenuViewPresenterProtocol: AnyObject {
-    init(view: MenuViewProtocol, networkServise: NetworkServiceProtocol)
+    init(view: MenuViewProtocol, networkServise: NetworkServiceProtocol, router: RouterProtocol)
     func getMenu()
     func getImage(forKey: Int, completion: @escaping ((UIImage?) -> Void))
     var menuItems: [menuItems]? {get set}
     var images: [UIImage]? {get set}
+    func didTapCell(menuItem: menuItems?, image: UIImage?)
   
 }
 
@@ -27,13 +28,12 @@ class MainMenuPresenter: MenuViewPresenterProtocol {
     weak var view: MenuViewProtocol?
     var menuItems: [menuItems]?
     var images: [UIImage]?
-    
-   // var router: RouterProtocol?
-    
-    required init(view: MenuViewProtocol, networkServise: NetworkServiceProtocol) {
+    var router: RouterProtocol?
+        
+    required init(view: MenuViewProtocol, networkServise: NetworkServiceProtocol, router: RouterProtocol) {
         self.view = view
         self.networkServise = networkServise
-        //self.router = router
+        self.router = router
         
         getMenu()
     }
@@ -72,5 +72,8 @@ class MainMenuPresenter: MenuViewPresenterProtocol {
         }
     }
     
-    
+     //MARK: Action for menu cell tap
+    func didTapCell(menuItem: menuItems?, image: UIImage?) {
+        router?.showDetail(menuItem: menuItem, image: image)
+    }
 }

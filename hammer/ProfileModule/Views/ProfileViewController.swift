@@ -8,8 +8,9 @@
 import UIKit
 // Module is not done at all
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, ProfileViewProtocol {
     var navBar = UINavigationBar(frame: CGRect(x: 0, y: 46, width: UIScreen.main.bounds.width, height: 40))
+    var presenter: ProfilePresenter?
     
     func setNavigationBar() {
         let navItem = UINavigationItem(title: "Профиль")

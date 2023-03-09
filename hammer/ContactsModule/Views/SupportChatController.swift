@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class SupportChatController : UIViewController {
-
+    //MARK: -  VC Lifecycle
     override func viewWillLayoutSubviews() {
         let width = self.view.frame.width
         let navigationBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: width, height: 44))
@@ -25,6 +25,7 @@ class SupportChatController : UIViewController {
         view.backgroundColor = .blue
     }
     
+     //MARK: -  Actions
     @objc func close() {
         self.dismiss(animated: true, completion: nil)
     }

@@ -17,7 +17,7 @@ protocol NetworkServiceProtocol {
 class NetworkService: NetworkServiceProtocol {
     var cachedImages: NSCache<NSString, UIImage>?
     
-     //MARK:  Menu data request
+    //MARK:  Menu data request
     func getData(completion: @escaping (Result<[menuItems]?, Error>) -> Void) {
         DispatchQueue.global().async {
             guard let url = URL(string: "https://api.spoonacular.com/food/menuItems/search?query=pizza&number=20&apiKey=b0912c42d2ac47ca9b8a40ec6ca11313") else { return }
@@ -45,7 +45,7 @@ class NetworkService: NetworkServiceProtocol {
         }
     }
     
-     //MARK: Loading images into the cache
+    //MARK: Loading images into the cache
     func loadImage(key: String, completion: @escaping ((UIImage?) -> Void)) {
         guard let url = URL(string: key) else { return }
         

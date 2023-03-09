@@ -16,15 +16,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         
-//        let moduleBuilder = ModuleBuilder()
-//        let VC = UIViewController()
-//        let router = Router(viewController: VC, assemblyBuilder: moduleBuilder)
+        let tabBar = UITabBarController()
+        tabBar.tabBar.backgroundColor = .white
+        tabBar.tabBar.unselectedItemTintColor = #colorLiteral(red: 0.7638193965, green: 0.7687924504, blue: 0.7902012467, alpha: 1)
+        tabBar.tabBar.selectedImageTintColor = #colorLiteral(red: 0.9875084758, green: 0.2303813398, blue: 0.41417557, alpha: 1)
         
-        let mainVc = ModuleBuilder.createMenuModule()
-       
-        
-        //router.initialVC()
-        window?.rootViewController = mainVc
+        let assemblyBuilder = ModuleBuilder()
+        let router = Router(tabBar: tabBar, assemblyBuilder: assemblyBuilder)
+    
+        router.initialVC()
+        tabBar.viewControllers?[1].loadViewIfNeeded()
+        tabBar.viewControllers?[2].loadViewIfNeeded()
+        tabBar.viewControllers?[3].loadViewIfNeeded()
+
+        window?.rootViewController = tabBar
         window?.makeKeyAndVisible()
     }
 
