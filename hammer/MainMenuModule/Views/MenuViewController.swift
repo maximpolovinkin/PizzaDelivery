@@ -7,6 +7,7 @@
 
 import UIKit
 
+//Some global shit. Ofc not final version
 var table: UITableView = {
     let table = UITableView(frame: CGRect(x: 0, y: 329, width: 0, height: 570), style: .plain)
     table.register(mainTableTableViewCell.self, forCellReuseIdentifier: "cell")
