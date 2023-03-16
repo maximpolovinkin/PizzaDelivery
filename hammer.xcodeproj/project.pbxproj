@@ -24,6 +24,8 @@
 		3281039E29AEACC20080F7CC /* ContactsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3281039D29AEACC20080F7CC /* ContactsPresenter.swift */; };
 		328103A029AEACD10080F7CC /* DetailPizzaPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3281039F29AEACD10080F7CC /* DetailPizzaPresenter.swift */; };
 		328103A229B1196D0080F7CC /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328103A129B1196D0080F7CC /* Router.swift */; };
+		328103AA29C2572D0080F7CC /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328103A929C2572D0080F7CC /* CartManager.swift */; };
+		328103AE29C3BB000080F7CC /* TrashTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328103AD29C3BB000080F7CC /* TrashTableViewCell.swift */; };
 		3290CF3828F8A03E003BA3E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290CF3728F8A03E003BA3E3 /* AppDelegate.swift */; };
 		3290CF3A28F8A03E003BA3E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290CF3928F8A03E003BA3E3 /* SceneDelegate.swift */; };
 		3290CF3C28F8A03E003BA3E3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290CF3B28F8A03E003BA3E3 /* ProfileViewController.swift */; };
@@ -54,6 +56,8 @@
 		3281039D29AEACC20080F7CC /* ContactsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsPresenter.swift; sourceTree = "<group>"; };
 		3281039F29AEACD10080F7CC /* DetailPizzaPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPizzaPresenter.swift; sourceTree = "<group>"; };
 		328103A129B1196D0080F7CC /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		328103A929C2572D0080F7CC /* CartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartManager.swift; sourceTree = "<group>"; };
+		328103AD29C3BB000080F7CC /* TrashTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashTableViewCell.swift; sourceTree = "<group>"; };
 		3290CF3428F8A03E003BA3E3 /* hammer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hammer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3290CF3728F8A03E003BA3E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3290CF3928F8A03E003BA3E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 		3281030E29A3AD650080F7CC /* TrashModule */ = {
 			isa = PBXGroup;
 			children = (
+				328103AB29C3BAB60080F7CC /* Models */,
 				3281038C29AD232B0080F7CC /* Views */,
 				3281038929AD22B50080F7CC /* Presenter */,
 			);
@@ -129,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				3272E37A28FB201F00D7AF53 /* NetworkService.swift */,
+				328103A929C2572D0080F7CC /* CartManager.swift */,
 			);
 			path = ServiceLayer;
 			sourceTree = "<group>";
@@ -255,6 +261,22 @@
 			path = AssemblyLayer;
 			sourceTree = "<group>";
 		};
+		328103AB29C3BAB60080F7CC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				328103AC29C3BAC70080F7CC /* Custom UI */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		328103AC29C3BAC70080F7CC /* Custom UI */ = {
+			isa = PBXGroup;
+			children = (
+				328103AD29C3BB000080F7CC /* TrashTableViewCell.swift */,
+			);
+			path = "Custom UI";
+			sourceTree = "<group>";
+		};
 		3290CF2B28F8A03E003BA3E3 = {
 			isa = PBXGroup;
 			children = (
@@ -368,7 +390,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				328103AE29C3BB000080F7CC /* TrashTableViewCell.swift in Sources */,
 				3272E36E28F9F57900D7AF53 /* MenuCollectionView.swift in Sources */,
+				328103AA29C2572D0080F7CC /* CartManager.swift in Sources */,
 				3281039C29AEACAC0080F7CC /* TrashPresenter.swift in Sources */,
 				328103A229B1196D0080F7CC /* Router.swift in Sources */,
 				3272E37628FAD55300D7AF53 /* mainTableTableViewCell.swift in Sources */,

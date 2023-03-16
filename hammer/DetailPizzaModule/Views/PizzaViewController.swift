@@ -7,16 +7,22 @@
 
 import UIKit
 
+protocol SenderProtocol {
+   func sedData(menuItem: menuItems?, image: UIImage?)
+}
+
 class PizzaViewController: UIViewController {
     var pizzaDescription = UILabel(frame: CGRect(x: 15, y: 475, width: 360, height: 25))
     var presenter: DetailViewPresenterProtocol!
-
+    var trash: TrashViewPresenterProtocol!
+    var delegate: SenderDelegate?
+    var deleg: SenderProtocol!
+   
      //MARK:  - VC Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViews()
         presenter.setDetailInfo()
-        
         view.backgroundColor = .white
     }
     
@@ -74,7 +80,8 @@ class PizzaViewController: UIViewController {
     }()
    
     @objc func moveToTrash() {
-       
+        Cart.shareInstance().setItem(item: menuItems(title: pizzaDescription.text ?? "", image: "SDf"))
+        Cart.shareInstance().setImages(image: pizzaImageView.image!)
     }
 
      //MARK: - Helpers
@@ -99,13 +106,13 @@ class PizzaViewController: UIViewController {
     }
 }
 
-
  //MARK: - DetailViewProtocol
 extension PizzaViewController: DetailViewProtocol {
     func setDetailInfo(menuItem: menuItems?, image: UIImage?) {
         guard let menuItem = menuItem, let image = image else { return }
         pizzaImageView.image = image
         pizzaDescription.font = .boldSystemFont(ofSize: 19)
+        pizzaDescription.text = menuItem.title
         descriptionView.text = "Ветчина,шампиньоны, увеличинная порция моцареллы, томатный соус"
         
     }

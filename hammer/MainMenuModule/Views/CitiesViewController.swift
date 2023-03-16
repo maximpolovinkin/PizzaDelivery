@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CitiesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CitiesViewController: UINavigationController, UITableViewDataSource, UITableViewDelegate {
     private let cities = ["Москва", "Ковров", "Унеча", "Владивосток", "Абакан", "Киров", "Крым", "Симферополь", "Владимир", "Выкса", "Нижний Новгород", "Брянск", "Москва", "Ковров", "Унеча", "Владивосток", "Абакан", "Киров", "Крым", "Симферополь", "Владимир", "Выкса", "Нижний Новгород", "Брянск"]
     
     private var filteredCities = [String]()
@@ -88,9 +88,7 @@ class CitiesViewController: UIViewController, UITableViewDataSource, UITableView
         searchContr.searchResultsUpdater = self
         searchContr.obscuresBackgroundDuringPresentation = false
         searchContr.searchBar.placeholder = "Найти город"
-        navigationItem.searchController = searchContr
         definesPresentationContext = true
-        
         //Table
         citiesTable.dataSource = self
         citiesTable.delegate = self

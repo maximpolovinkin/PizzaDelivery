@@ -17,12 +17,14 @@ protocol AssamblyBuilderProtocol {
 }
 
 class ModuleBuilder: NSObject, AssamblyBuilderProtocol {
+    
      //MARK: Detail pizza module
     func createDetailModule(menuItem: menuItems?, image: UIImage?) -> UIViewController {
         let view =  PizzaViewController()
         let networkService = NetworkService()
+       // let senderDelegate = TrashViewController()
         let presenter = DetailPizzaPresenter(view: view, menuItem: menuItem, networkingService: networkService, image: image)
-         
+        
         view.presenter = presenter
         
         return view
@@ -64,7 +66,7 @@ class ModuleBuilder: NSObject, AssamblyBuilderProtocol {
         let presenter = TrashViewPresenter(view: view, router: router)
         
         view.presenter = presenter
-        
+     
         return view
     }
 }

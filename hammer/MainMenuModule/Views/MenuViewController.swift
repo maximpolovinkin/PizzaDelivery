@@ -23,11 +23,11 @@ class MenuViewController: UIViewController {
     private let citiController = CitiesViewController()
     let pizza = PizzaViewController()
     var presenter: MenuViewPresenterProtocol!
+    var senderDelegat = TrashViewController()
     
     //MARK: - VC lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         table.dataSource = self
         table.delegate = self
         
@@ -48,10 +48,16 @@ class MenuViewController: UIViewController {
     
     //MARK: - UI Settings
     func setNavigationBar() {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "chevron.down"), for: .normal)
+        button.setTitle("Москва", for: .normal)
+        button.sizeToFit()
+        button.semanticContentAttribute = .forceRightToLeft
+        button.tintColor = .black
+        button.addTarget(self, action: #selector(chooseCity), for: .touchUpInside)
+        
         let navItem = UINavigationItem(title: "")
-        let doneItem = UIBarButtonItem(title: "Москва v", style: UIBarButtonItem.Style.plain, target: self, action: #selector(chooseCity))
-        doneItem.tintColor = .black
-        navItem.leftBarButtonItem = doneItem
+        navItem.leftBarButtonItem = UIBarButtonItem(customView: button)
         navBar.setItems([navItem], animated: false)
         navBar.backgroundColor = .init(named: "Color")
         self.view.addSubview(navBar)
@@ -94,6 +100,7 @@ class MenuViewController: UIViewController {
 
 //MARK: - Table View
 extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = table.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! mainTableTableViewCell
         
@@ -134,6 +141,4 @@ extension MenuViewController: MenuViewProtocol {
         let alert = UIAlertController(title: "Упс! Возникла ошибка", message: "Перезагрузите приложение", preferredStyle: .alert)
         show(alert, sender: nil)
     }
-    
-    
 }

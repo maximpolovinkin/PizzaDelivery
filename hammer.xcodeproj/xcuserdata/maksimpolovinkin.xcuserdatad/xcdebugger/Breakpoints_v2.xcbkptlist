@@ -279,22 +279,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "94FB5A10-6EC6-4B58-9788-3E09D6BA7DFA"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "hammer/MainMenuModule/Views/MenuViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "64645BA8-DD5F-405D-ACD7-14A6AA3DC9C8"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -462,8 +446,8 @@
             filePath = "hammer/MainMenuModule/Views/MenuViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "setNavigationBar()"
             landmarkType = "7">
          </BreakpointContent>
@@ -513,6 +497,244 @@
             startingLineNumber = "30"
             endingLineNumber = "30"
             landmarkName = "scene(_:willConnectTo:options:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "87A5F084-4E8D-40E1-A717-6636B13FC8C4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "hammer/TrashModule/Presenter/TrashPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "updateTrash(menuItem:image:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "87A5F084-4E8D-40E1-A717-6636B13FC8C4 - 92a14c8e2cd0611a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "hammer.TrashViewPresenter.updateTrash(menuItem: Swift.Optional&lt;hammer.menuItems&gt;, image: Swift.Optional&lt;__C.UIImage&gt;) -&gt; ()"
+                  moduleName = "hammer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimpolovinkin/Documents/Swift%20Projects/testTasks/hammer/hammer/TrashModule/Presenter/TrashPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "87A5F084-4E8D-40E1-A717-6636B13FC8C4 - 92a14c8e2cd0611a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "hammer.TrashViewPresenter.updateTrash(menuItem: Swift.Optional&lt;hammer.menuItems&gt;, image: Swift.Optional&lt;__C.UIImage&gt;) -&gt; ()"
+                  moduleName = "hammer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimpolovinkin/Documents/Swift%20Projects/testTasks/hammer/hammer/TrashModule/Presenter/TrashPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "152">
+               </Location>
+               <Location
+                  uuid = "87A5F084-4E8D-40E1-A717-6636B13FC8C4 - 92a14c8e2cd0611a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "hammer.TrashViewPresenter.updateTrash(menuItem: Swift.Optional&lt;hammer.menuItems&gt;, image: Swift.Optional&lt;__C.UIImage&gt;) -&gt; ()"
+                  moduleName = "hammer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimpolovinkin/Documents/Swift%20Projects/testTasks/hammer/hammer/TrashModule/Presenter/TrashPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "240">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B38D33EC-9877-4064-98CD-A92F204C0162"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "hammer/AssemblyLayer/Router.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "initialVC()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B38D33EC-9877-4064-98CD-A92F204C0162 - 3144e8d80d98cc47"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "hammer.Router.initialVC() -&gt; ()"
+                  moduleName = "hammer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimpolovinkin/Documents/Swift%20Projects/testTasks/hammer/hammer/AssemblyLayer/Router.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "840">
+               </Location>
+               <Location
+                  uuid = "B38D33EC-9877-4064-98CD-A92F204C0162 - 3144e8d80d98cc47"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "hammer.Router.initialVC() -&gt; ()"
+                  moduleName = "hammer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimpolovinkin/Documents/Swift%20Projects/testTasks/hammer/hammer/AssemblyLayer/Router.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "1060">
+               </Location>
+               <Location
+                  uuid = "B38D33EC-9877-4064-98CD-A92F204C0162 - 3144e8d80d98cc47"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "hammer.Router.initialVC() -&gt; ()"
+                  moduleName = "hammer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimpolovinkin/Documents/Swift%20Projects/testTasks/hammer/hammer/AssemblyLayer/Router.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "1444">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8F7564F5-A8FC-4FCE-8339-ABFB5A1D6EAE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "hammer/TrashModule/Views/TrashViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "035C2ECF-D1D2-4698-86D0-AFBCBE1CBF76"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "hammer/TrashModule/Views/TrashViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6193703E-4AD6-4CBA-B292-BE59F2631E63"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "hammer/TrashModule/Presenter/TrashPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "updateTrash(menuItem:image:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AD70AA30-9027-46C5-838F-67C6B8F10941"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "hammer/MainMenuModule/Presenter/MainMenuPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "getMenu()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "350443F1-F801-4FAD-9E9B-9177414D7A16"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "hammer/TrashModule/Presenter/TrashPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "init(view:router:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3A732C2B-FEF9-451E-9C90-D724AB647431"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "hammer/DetailPizzaModule/Presenter/DetailPizzaPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "didTapAdd(menuItem:image:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3F788050-1ABB-43C6-AD62-648A5CD7CD22"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "hammer/TrashModule/Views/TrashViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

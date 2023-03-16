@@ -74,7 +74,7 @@ class mainTableTableViewCell: UITableViewCell {
         addSubview(img)
         textField.frame = CGRect(x: 175, y: 5, width: 171, height: 52)
         descriptionTextField.frame = CGRect(x: 175, y: 50, width: 171, height: 74)
-        priceButton.frame = CGRect(x: 305, y: 125, width: 87, height: 32)
+        priceButton.frame = CGRect(x: 300, y: 125, width: 87, height: 32)
         img.frame = CGRect(x: 5, y: 5, width: 165, height: 165)
     }
     

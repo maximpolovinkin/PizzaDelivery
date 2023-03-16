@@ -16,7 +16,7 @@ protocol RouterMain {
 protocol RouterProtocol: RouterMain {
     func initialVC()
     func showDetail(menuItem: menuItems?, image: UIImage?)
-    func popRootVC()
+    func updateTrash()
 }
 
 class Router: RouterProtocol {
@@ -35,8 +35,16 @@ class Router: RouterProtocol {
                   let contactsVC = assemblyBuilder?.createContacntsModule(router: self),
                   let profileVC = assemblyBuilder?.createProfileModule(router: self),
                   let trashVC = assemblyBuilder?.createTrashModule(router: self) else {return}
+        
+            let trashNavVc = UINavigationController()
+            trashNavVc.viewControllers = [trashVC]
+            trashNavVc.navigationBar.topItem?.title = "Корзина"
             
-            tabBar.viewControllers = [mainVc, contactsVC, profileVC, trashVC]
+            let profileNavVC = UINavigationController()
+            profileNavVC.viewControllers = [profileVC]
+            profileNavVC.navigationBar.topItem?.title = "Профиль"
+            
+            tabBar.viewControllers = [mainVc, contactsVC, profileNavVC, trashNavVc]
         }
     }
     
@@ -44,11 +52,12 @@ class Router: RouterProtocol {
     func showDetail(menuItem: menuItems?, image: UIImage?) {
         if let tabBar = tabBar {
             guard let detailVC = assemblyBuilder?.createDetailModule(menuItem: menuItem, image: image) else { return }
+            detailVC.modalPresentationStyle = .fullScreen
             tabBar.present(detailVC, animated: true)
         }
     }
     
-    func popRootVC() {
+    func updateTrash() {
         
     }
 }
