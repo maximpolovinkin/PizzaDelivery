@@ -26,6 +26,7 @@
 		328103A229B1196D0080F7CC /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328103A129B1196D0080F7CC /* Router.swift */; };
 		328103AA29C2572D0080F7CC /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328103A929C2572D0080F7CC /* CartManager.swift */; };
 		328103AE29C3BB000080F7CC /* TrashTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328103AD29C3BB000080F7CC /* TrashTableViewCell.swift */; };
+		328103B029C49BA40080F7CC /* TrashCustomStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328103AF29C49BA40080F7CC /* TrashCustomStepper.swift */; };
 		3290CF3828F8A03E003BA3E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290CF3728F8A03E003BA3E3 /* AppDelegate.swift */; };
 		3290CF3A28F8A03E003BA3E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290CF3928F8A03E003BA3E3 /* SceneDelegate.swift */; };
 		3290CF3C28F8A03E003BA3E3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290CF3B28F8A03E003BA3E3 /* ProfileViewController.swift */; };
@@ -58,6 +59,7 @@
 		328103A129B1196D0080F7CC /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		328103A929C2572D0080F7CC /* CartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartManager.swift; sourceTree = "<group>"; };
 		328103AD29C3BB000080F7CC /* TrashTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashTableViewCell.swift; sourceTree = "<group>"; };
+		328103AF29C49BA40080F7CC /* TrashCustomStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashCustomStepper.swift; sourceTree = "<group>"; };
 		3290CF3428F8A03E003BA3E3 /* hammer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hammer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3290CF3728F8A03E003BA3E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3290CF3928F8A03E003BA3E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				328103AD29C3BB000080F7CC /* TrashTableViewCell.swift */,
+				328103AF29C49BA40080F7CC /* TrashCustomStepper.swift */,
 			);
 			path = "Custom UI";
 			sourceTree = "<group>";
@@ -336,6 +339,8 @@
 			dependencies = (
 			);
 			name = hammer;
+			packageProductDependencies = (
+			);
 			productName = hammer;
 			productReference = 3290CF3428F8A03E003BA3E3 /* hammer.app */;
 			productType = "com.apple.product-type.application";
@@ -364,6 +369,8 @@
 				Base,
 			);
 			mainGroup = 3290CF2B28F8A03E003BA3E3;
+			packageReferences = (
+			);
 			productRefGroup = 3290CF3528F8A03E003BA3E3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -413,6 +420,7 @@
 				3290CF5128F8A254003BA3E3 /* TrashViewController.swift in Sources */,
 				3272E37028F9FBD900D7AF53 /* BannersModel.swift in Sources */,
 				3290CF3828F8A03E003BA3E3 /* AppDelegate.swift in Sources */,
+				328103B029C49BA40080F7CC /* TrashCustomStepper.swift in Sources */,
 				3281039A29AEAC9B0080F7CC /* ProfilePresenter.swift in Sources */,
 				3290CF5B28F98015003BA3E3 /* bannersCollectionView.swift in Sources */,
 				3290CF3A28F8A03E003BA3E3 /* SceneDelegate.swift in Sources */,
@@ -437,6 +445,7 @@
 		3290CF4628F8A03F003BA3E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -497,6 +506,7 @@
 		3290CF4728F8A03F003BA3E3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -556,6 +566,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZV23SB6J73;
+				EXCLUDED_ARCHS = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hammer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -584,6 +595,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZV23SB6J73;
+				EXCLUDED_ARCHS = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hammer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

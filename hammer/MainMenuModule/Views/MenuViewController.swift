@@ -113,6 +113,7 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
         if let title = presenter.menuItems?[indexPath.row].title {
             cell.textField.text = title
         }
+        cell.textField.sizeToFit()
         cell.descriptionTextField.text = "Ветчина,шампиньоны, увеличинная порция моцареллы, томатный соус"
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         return cell

@@ -20,7 +20,7 @@ class NetworkService: NetworkServiceProtocol {
     //MARK:  Menu data request
     func getData(completion: @escaping (Result<[menuItems]?, Error>) -> Void) {
         DispatchQueue.global().async {
-            guard let url = URL(string: "https://api.spoonacular.com/food/menuItems/search?query=pizza&number=20&apiKey=b0912c42d2ac47ca9b8a40ec6ca11313") else { return }
+            guard let url = URL(string: "https://api.spoonacular.com/food/menuItems/search?query=pizza&number=20&apiKey=aae9736dc9bd406483a18beabea7f3f7") else { return }
             
             URLSession.shared.dataTask(with: url) {data, _, error in
                 if let error = error {
@@ -37,6 +37,7 @@ class NetworkService: NetworkServiceProtocol {
                     
                 } catch {
                     DispatchQueue.main.async {
+                        print(error.localizedDescription)
                         completion(.failure(error))
                     }
                 }

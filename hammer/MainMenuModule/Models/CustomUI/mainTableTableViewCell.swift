@@ -51,7 +51,7 @@ class mainTableTableViewCell: UITableViewCell {
         pb.layer.borderWidth = 1
         pb.layer.borderColor =  UIColor(named: "priceColor")?.cgColor
         
-        pb.setTitle("от 345 р", for: .normal)
+        pb.setTitle("от 345 ₽", for: .normal)
         pb.setTitleColor(UIColor(named: "priceColor"), for: .normal)
         
         pb.titleLabel?.font = .systemFont(ofSize: 13)

@@ -6,17 +6,13 @@
 //
 
 import UIKit
-
-protocol SenderProtocol {
-   func sedData(menuItem: menuItems?, image: UIImage?)
-}
+import AudioToolbox
 
 class PizzaViewController: UIViewController {
-    var pizzaDescription = UILabel(frame: CGRect(x: 15, y: 475, width: 360, height: 25))
     var presenter: DetailViewPresenterProtocol!
-    var trash: TrashViewPresenterProtocol!
     var delegate: SenderDelegate?
-    var deleg: SenderProtocol!
+   
+    private var pizzaId = 0
    
      //MARK:  - VC Lifecycle
     override func viewDidLoad() {
@@ -27,6 +23,8 @@ class PizzaViewController: UIViewController {
     }
     
      //MARK: - UI Elements
+    var pizzaDescription = UILabel(frame: CGRect(x: 15, y: 475, width: 360, height: 25))
+    
     let closeBtn : UIButton = {
         let closeBtn = UIButton(type: .close)
         closeBtn.frame = CGRect(x: 15, y: 45, width: 45, height: 45)
@@ -63,7 +61,7 @@ class PizzaViewController: UIViewController {
         let sizeChanger = UISegmentedControl(items: ["Маленькая", "Средняя", "Большая"])
         sizeChanger.frame = CGRect(x: 15, y: 650, width: 360, height: 40)
         sizeChanger.selectedSegmentIndex = 1
-        
+      
         return sizeChanger
     }()
     
@@ -72,17 +70,32 @@ class PizzaViewController: UIViewController {
     
         toTrashButton.backgroundColor = UIColor(named: "priceColor")
         toTrashButton.layer.cornerRadius = toTrashButton.bounds.height / 2
-        toTrashButton.setTitle("В корзину за 345 р", for: .normal)
+        toTrashButton.setTitle("В корзину за 345 ₽", for: .normal)
         toTrashButton.titleLabel?.font = .boldSystemFont(ofSize: 17)
         toTrashButton.titleLabel?.textColor = .white
         
         return toTrashButton
     }()
    
+    //MARK:  - Actions
     @objc func moveToTrash() {
-        Cart.shareInstance().setItem(item: menuItems(title: pizzaDescription.text ?? "", image: "SDf"))
+        Cart.shareInstance().setItem(item: menuItems(id: pizzaId, title: pizzaDescription.text ?? "", image: "SDf"))
         Cart.shareInstance().setImages(image: pizzaImageView.image!)
+        Cart.shareInstance().addPrice(price: 345)
+        
+        let notificationFeedbackGenerator = UINotificationFeedbackGenerator()
+        notificationFeedbackGenerator.prepare()
+        notificationFeedbackGenerator.notificationOccurred(.success)
+        
+        self.dismiss(animated: true)
     }
+    
+    @objc func sizeChangerTapped() {
+        let impactFeedbackgenerator = UIImpactFeedbackGenerator(style: .light)
+        impactFeedbackgenerator.prepare()
+        impactFeedbackgenerator.impactOccurred()
+    }
+    
 
      //MARK: - Helpers
     func setActions(){ // was added cuz caught unrecognized selector sent to class
@@ -110,6 +123,7 @@ class PizzaViewController: UIViewController {
 extension PizzaViewController: DetailViewProtocol {
     func setDetailInfo(menuItem: menuItems?, image: UIImage?) {
         guard let menuItem = menuItem, let image = image else { return }
+        pizzaId = menuItem.id
         pizzaImageView.image = image
         pizzaDescription.font = .boldSystemFont(ofSize: 19)
         pizzaDescription.text = menuItem.title

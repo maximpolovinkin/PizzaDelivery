@@ -9,9 +9,21 @@ import Foundation
 
 struct initial: Codable {
     var menuItems: [menuItems]
+
+    enum CodingKeys: String, CodingKey {
+            case menuItems = "menuItems"
+        }
 }
 
 struct menuItems: Codable {
-    var title: String
-    var image: String
+    let id: Int
+    let title: String
+    let image: String
+
+    enum CodingKeys: String, CodingKey{
+        case title = "title"
+        case image = "image"
+        case id = "id"
+    }
+
 }

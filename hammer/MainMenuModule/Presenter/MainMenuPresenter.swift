@@ -58,7 +58,7 @@ class MainMenuPresenter: MenuViewPresenterProtocol {
     //MARK: Get images from cache if they are there otherwise loading from url and save
     func getImage(forKey index: Int, completion: @escaping ((UIImage?) -> Void)) {
         if let menuItems = self.menuItems {
-            if let image = networkServise.cachedImages?.object(forKey: menuItems[index].image as NSString) {
+            if let image = networkServise.cachedImages?.object(forKey: menuItems[index].image as! NSString) {
                 print("pizda")
               completion(image)
             } else {
