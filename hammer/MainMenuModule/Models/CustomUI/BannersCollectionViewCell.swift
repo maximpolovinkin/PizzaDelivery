@@ -9,14 +9,7 @@ import UIKit
 
 class BannersCollectionViewCell: UICollectionViewCell {
     
-    static let reuseId = "BannersCollectionViewCell"
-    
-    let imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-    
+    //MARK: - Lifecycle
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(imageView)
@@ -29,4 +22,14 @@ class BannersCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    //MARK: - UI Elements
+    static let reuseId = "BannersCollectionViewCell"
+    
+    let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return imageView
+    }()
 }

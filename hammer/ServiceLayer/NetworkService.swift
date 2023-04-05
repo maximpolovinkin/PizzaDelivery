@@ -11,11 +11,23 @@ import UIKit
 protocol NetworkServiceProtocol {
     func getData(completion: @escaping (Result<[menuItems]?, Error>) -> Void)
     func loadImage(key: String, completion: @escaping ((UIImage?) -> Void))
+    func loadTitle(key: String, object: String, completion: @escaping ((String?) -> Void))
     var cachedImages: NSCache<NSString, UIImage>? {get set}
+    var cachedTitles: NSCache<NSString, NSString>? {get set}
 }
 
 class NetworkService: NetworkServiceProtocol {
-    var cachedImages: NSCache<NSString, UIImage>?
+    var cachedImages: NSCache<NSString, UIImage>? = {
+        let cache = NSCache<NSString, UIImage>()
+        
+        return cache
+    }()
+    
+    var cachedTitles: NSCache<NSString, NSString>? = {
+        let cache = NSCache<NSString, NSString>()
+        
+        return cache
+    }()
     
     //MARK:  Menu data request
     func getData(completion: @escaping (Result<[menuItems]?, Error>) -> Void) {
@@ -27,11 +39,9 @@ class NetworkService: NetworkServiceProtocol {
                     completion(.failure(error))
                     return
                 }
-                
                 do{
                     let data = try JSONDecoder().decode(initial.self, from: data!)
                     DispatchQueue.main.async {
-                        print(data.menuItems)
                         completion(.success(data.menuItems))
                     }
                     
@@ -49,17 +59,23 @@ class NetworkService: NetworkServiceProtocol {
     //MARK: Loading images into the cache
     func loadImage(key: String, completion: @escaping ((UIImage?) -> Void)) {
         guard let url = URL(string: key) else { return }
-        
-        print(url)
         DispatchQueue.global().async {
             if let data = try? Data(contentsOf: url) {
                 if let image = (UIImage(data: data)){
-                    DispatchQueue.main.async {
-                        print("hui")
-                        self.cachedImages?.setObject(image, forKey: key as NSString)
+                    DispatchQueue.main.async { [self] in
+                        cachedImages?.setObject(image, forKey: key as NSString)
                         completion(image)
                     }
                 }
+            }
+        }
+    }
+    
+    func loadTitle(key: String, object: String, completion: @escaping ((String?) -> Void)) {
+        DispatchQueue.global().async {
+            DispatchQueue.main.async { [self] in
+                cachedTitles?.setObject(object as NSString, forKey: key as NSString)
+                completion(object)
             }
         }
     }

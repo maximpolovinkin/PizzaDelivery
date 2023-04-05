@@ -39,14 +39,29 @@ class Router: RouterProtocol {
             let trashNavVc = UINavigationController()
             trashNavVc.viewControllers = [trashVC]
             trashNavVc.navigationBar.topItem?.title = "Корзина"
+           
             
             let profileNavVC = UINavigationController()
             profileNavVC.viewControllers = [profileVC]
             profileNavVC.navigationBar.topItem?.title = "Профиль"
             
-            tabBar.viewControllers = [mainVc, contactsVC, profileNavVC, trashNavVc]
+            let mainVC = UINavigationController()
+            let button = UIButton(type: .system)
+            mainVC.viewControllers = [mainVc]
+            button.setImage(UIImage(systemName: "chevron.down"), for: .normal)
+            button.setTitle("Москва", for: .normal)
+            button.sizeToFit()
+            button.semanticContentAttribute = .forceRightToLeft
+            let navItem = UINavigationItem(title: "")
+            navItem.leftBarButtonItem = UIBarButtonItem(customView: button)
+           // mainVC.navigationBar.setItems([navItem], animated: false)
+           // mainVC.navigationBar.items = [navItem]
+            
+            tabBar.viewControllers = [mainVC, contactsVC, profileNavVC, trashNavVc]
         }
     }
+    
+   
     
      //MARK: Detail pizza screen
     func showDetail(menuItem: menuItems?, image: UIImage?) {

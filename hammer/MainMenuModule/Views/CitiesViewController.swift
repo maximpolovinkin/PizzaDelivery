@@ -7,11 +7,11 @@
 
 import UIKit
 
-class CitiesViewController: UINavigationController, UITableViewDataSource, UITableViewDelegate {
+class CitiesViewController: UINavigationController{
     private let cities = ["Москва", "Ковров", "Унеча", "Владивосток", "Абакан", "Киров", "Крым", "Симферополь", "Владимир", "Выкса", "Нижний Новгород", "Брянск", "Москва", "Ковров", "Унеча", "Владивосток", "Абакан", "Киров", "Крым", "Симферополь", "Владимир", "Выкса", "Нижний Новгород", "Брянск"]
-    
     private var filteredCities = [String]()
     
+    //MARK: - UI Elements
     private var citiesTable: UITableView = {
         let citiesTable = UITableView(frame: CGRect(x: 0, y: 0, width: 770, height: 270), style: .grouped)
         citiesTable.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -20,6 +20,8 @@ class CitiesViewController: UINavigationController, UITableViewDataSource, UITab
     }()
     
     private let searchContr = UISearchController(searchResultsController: nil)
+    
+    //MARK: UI Settings
     private var searchIsEmpty : Bool {
         guard let text = searchContr.searchBar.text else { return false }
         return text.isEmpty
@@ -29,6 +31,21 @@ class CitiesViewController: UINavigationController, UITableViewDataSource, UITab
         return searchContr.isActive && !searchIsEmpty
     }
     
+    private func setUpViews() {
+        //Main View
+        view.backgroundColor = .white
+        view.addSubview(citiesTable)
+        //Search Controller
+        searchContr.searchResultsUpdater = self
+        searchContr.obscuresBackgroundDuringPresentation = false
+        searchContr.searchBar.placeholder = "Найти город"
+        definesPresentationContext = true
+        //Table
+        citiesTable.dataSource = self
+        citiesTable.delegate = self
+    }
+    
+    //MARK: - Lifecycle
     override func viewWillLayoutSubviews() {
         let width = self.view.frame.width
         let navigationBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: width, height: 70))
@@ -57,6 +74,26 @@ class CitiesViewController: UINavigationController, UITableViewDataSource, UITab
         
     }
     
+    //MARK: - Actions
+    @objc func close() {
+        self.dismiss(animated: true, completion: nil)
+    }
+}
+
+//MARK: - UISearchResultsUpdating
+extension CitiesViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        filterData(searchQuery: searchController.searchBar.text!)
+    }
+    
+    private func filterData(searchQuery: String) {
+        filteredCities = cities.filter{$0.lowercased().contains(searchQuery.lowercased())}
+        citiesTable.reloadData()
+    }
+}
+
+//MARK: - UITableViewDataSource, UITableViewDelegate
+extension CitiesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering {
             return filteredCities.count
@@ -74,34 +111,5 @@ class CitiesViewController: UINavigationController, UITableViewDataSource, UITab
             cell.textLabel?.text = city
         }
         return cell
-    }
-    
-    @objc func close() {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    private func setUpViews() {
-        //Main View
-        view.backgroundColor = .white
-        view.addSubview(citiesTable)
-        //Search Controller
-        searchContr.searchResultsUpdater = self
-        searchContr.obscuresBackgroundDuringPresentation = false
-        searchContr.searchBar.placeholder = "Найти город"
-        definesPresentationContext = true
-        //Table
-        citiesTable.dataSource = self
-        citiesTable.delegate = self
-    }
-}
-
-extension CitiesViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        filterData(searchQuery: searchController.searchBar.text!)
-    }
-    
-    private func filterData(searchQuery: String) {
-        filteredCities = cities.filter{$0.lowercased().contains(searchQuery.lowercased())}
-        citiesTable.reloadData()
     }
 }

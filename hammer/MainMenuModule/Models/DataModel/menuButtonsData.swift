@@ -11,6 +11,7 @@ import UIKit
 
 struct menu {
     var image: UIImage
+    static let categoryNames = [ "Пицца", "Комбо", "Десерты", "Напитки",]
     
     static func fetchBanners() -> [menu]{
         let firstBanner = menu(image: UIImage(named: "menu1")!)// forse inwrp because I'm sure it exists

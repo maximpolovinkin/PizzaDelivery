@@ -14,8 +14,8 @@ struct banner {
     
     static func fetchBanners() -> [banner]{
         let firstBanner = banner(image: UIImage(named: "banner1")!)// forse inwrp because I'm sure it exists
-        let secondBanner = banner(image: UIImage(named: "banner2")!)// forse inwrp because I'm sure it exists
-        let firdtBanner = banner(image: UIImage(named: "banner3")!)// forse inwrp because I'm sure it exists
+        let secondBanner = banner(image: UIImage(named: "banner1")!)// forse inwrp because I'm sure it exists
+        let firdtBanner = banner(image: UIImage(named: "banner1")!)// forse inwrp because I'm sure it exists
         return [firstBanner, secondBanner, firdtBanner]
     }
 }

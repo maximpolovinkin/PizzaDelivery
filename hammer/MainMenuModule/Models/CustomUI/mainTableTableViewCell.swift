@@ -10,12 +10,23 @@ import UIKit
 
 class mainTableTableViewCell: UITableViewCell {
     
+    //MARK: - Lifecycle
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setViews()
+    }
+    
+    //MARK:  - UI Elements
     class TextField: UITextView {
-         func textRect(forBounds bounds: CGRect) -> CGRect {
+        func textRect(forBounds bounds: CGRect) -> CGRect {
             return bounds.insetBy(dx: 40, dy: 20)
         }
         
-         func editingRect(forBounds bounds: CGRect) -> CGRect {
+        func editingRect(forBounds bounds: CGRect) -> CGRect {
             return bounds.insetBy(dx: 24, dy: 20)
         }
         
@@ -24,13 +35,12 @@ class mainTableTableViewCell: UITableViewCell {
         }
     }
     
-    let pizzaSheet = PizzaViewController()
-    let menuController = MenuViewController()
-    
-    let textField: UITextView = {
-        let tf = TextField()
+    let textField: UITextField = {
+        let tf = UITextField()
         tf.font = .systemFont(ofSize: 17)
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.sizeToFit()
+        tf.frame = CGRect(x: 175, y: 5, width: 171, height: 5)
         
         return tf
     }()
@@ -40,6 +50,7 @@ class mainTableTableViewCell: UITableViewCell {
         dtf.font = .systemFont(ofSize: 13)
         dtf.textColor = .systemGray2
         dtf.translatesAutoresizingMaskIntoConstraints = false
+        dtf.frame = CGRect(x: 175, y: 50, width: 171, height: 64)
         
         return dtf
     }()
@@ -50,42 +61,54 @@ class mainTableTableViewCell: UITableViewCell {
         pb.layer.cornerRadius = 8
         pb.layer.borderWidth = 1
         pb.layer.borderColor =  UIColor(named: "priceColor")?.cgColor
-        
         pb.setTitle("от 345 ₽", for: .normal)
         pb.setTitleColor(UIColor(named: "priceColor"), for: .normal)
-        
         pb.titleLabel?.font = .systemFont(ofSize: 13)
-    
+        pb.frame = CGRect(x: 300, y: 125, width: 87, height: 32)
+        pb.translatesAutoresizingMaskIntoConstraints = false
         
         return pb
     }()
     
     let img: UIImageView = {
         let img = UIImageView()
+        img.translatesAutoresizingMaskIntoConstraints = false
+        img.frame = CGRect(x: 5, y: 5, width: 165, height: 165)
+        
         return img
     }()
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        addSubview(textField)
-        addSubview(descriptionTextField)
-        addSubview(priceButton)
-        priceButton.addTarget(MenuViewController.self, action: #selector(priceTouched), for: .touchUpInside)
-        addSubview(img)
-        textField.frame = CGRect(x: 175, y: 5, width: 171, height: 52)
-        descriptionTextField.frame = CGRect(x: 175, y: 50, width: 171, height: 74)
-        priceButton.frame = CGRect(x: 300, y: 125, width: 87, height: 32)
-        img.frame = CGRect(x: 5, y: 5, width: 165, height: 165)
+    //MARK: - UI Settings
+    func setViews(){
+        self.addSubview(textField)
+        self.addSubview(descriptionTextField)
+        self.addSubview(priceButton)
+        self.addSubview(img)
+        
+        setConstraints()
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func setConstraints() {
+        NSLayoutConstraint.activate([
+            textField.topAnchor.constraint(equalTo: self.topAnchor, constant: 16),
+            textField.leftAnchor.constraint(equalTo: self.img.rightAnchor, constant: 5),
+            textField.heightAnchor.constraint(greaterThanOrEqualToConstant: 5),
+            textField.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -24),
+            
+            descriptionTextField.topAnchor.constraint(equalTo: self.topAnchor, constant: 44),
+            descriptionTextField.leftAnchor.constraint(equalTo: self.img.rightAnchor, constant: 5),
+            descriptionTextField.heightAnchor.constraint(greaterThanOrEqualToConstant: 64),
+            descriptionTextField.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -24),
+            
+            img.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16),
+            img.widthAnchor.constraint(equalToConstant: 132),
+            img.heightAnchor.constraint(equalToConstant: 132),
+            img.topAnchor.constraint(equalTo: self.topAnchor, constant: 16),
+            
+            priceButton.widthAnchor.constraint(equalToConstant: 87),
+            priceButton.heightAnchor.constraint(equalToConstant: 32),
+            priceButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -24),
+            priceButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16)
+        ])
     }
-    
-    @objc func priceTouched() {
-        priceButton.titleLabel?.text = "0"
-    }
-    
-
-
 }

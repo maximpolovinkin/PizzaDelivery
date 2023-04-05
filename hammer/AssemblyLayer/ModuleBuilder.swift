@@ -22,7 +22,6 @@ class ModuleBuilder: NSObject, AssamblyBuilderProtocol {
     func createDetailModule(menuItem: menuItems?, image: UIImage?) -> UIViewController {
         let view =  PizzaViewController()
         let networkService = NetworkService()
-       // let senderDelegate = TrashViewController()
         let presenter = DetailPizzaPresenter(view: view, menuItem: menuItem, networkingService: networkService, image: image)
         
         view.presenter = presenter

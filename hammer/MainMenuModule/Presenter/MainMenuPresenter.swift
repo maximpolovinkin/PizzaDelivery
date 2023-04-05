@@ -17,6 +17,7 @@ protocol MenuViewPresenterProtocol: AnyObject {
     init(view: MenuViewProtocol, networkServise: NetworkServiceProtocol, router: RouterProtocol)
     func getMenu()
     func getImage(forKey: Int, completion: @escaping ((UIImage?) -> Void))
+    func getTitle(forKey index: Int, completion: @escaping ((String?) -> Void))
     var menuItems: [menuItems]? {get set}
     var images: [UIImage]? {get set}
     func didTapCell(menuItem: menuItems?, image: UIImage?)
@@ -42,7 +43,6 @@ class MainMenuPresenter: MenuViewPresenterProtocol {
     func getMenu() {
         networkServise.getData {[weak self] result in
             guard let self = self else { return }
-            
             DispatchQueue.main.async { [self] in
                 switch result {
                 case .success(let data):
@@ -58,21 +58,35 @@ class MainMenuPresenter: MenuViewPresenterProtocol {
     //MARK: Get images from cache if they are there otherwise loading from url and save
     func getImage(forKey index: Int, completion: @escaping ((UIImage?) -> Void)) {
         if let menuItems = self.menuItems {
-            if let image = networkServise.cachedImages?.object(forKey: menuItems[index].image as! NSString) {
-                print("pizda")
-              completion(image)
+            if let image = networkServise.cachedImages?.object(forKey: "\(menuItems[index].image)" as NSString) {
+                completion(image)
             } else {
-                networkServise.loadImage(key: menuItems[index].image) { image in
+                networkServise.loadImage(key: "\(menuItems[index].image)") { image in
                     DispatchQueue.main.async {
-                        print("govno")
                         completion(image)
                     }
                 }
             }
         }
     }
+    //MARK: Get titles from cache if they are there otherwise loading from url and save
+    func getTitle(forKey index: Int, completion: @escaping ((String?) -> Void)) {
+        if let menuItems = self.menuItems {
+            if let title = networkServise.cachedTitles?.object(forKey: "\(menuItems[index].title)" as NSString) {
+                completion(title as String)
+            } else {
+                networkServise.loadTitle(key: "\(menuItems[index].title)", object: menuItems[index].title) { title in
+                    if let title = title {
+                        DispatchQueue.main.async {
+                            completion(title)
+                        }
+                    }
+                }
+            }
+        }
+    }
     
-     //MARK: Action for menu cell tap
+    //MARK: Action for menu cell tap
     func didTapCell(menuItem: menuItems?, image: UIImage?) {
         router?.showDetail(menuItem: menuItem, image: image)
     }

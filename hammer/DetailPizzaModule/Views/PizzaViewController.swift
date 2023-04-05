@@ -38,12 +38,13 @@ class PizzaViewController: UIViewController {
         let doughChanger = UISegmentedControl(items: ["Традиционное", "Тонкое"])
         doughChanger.frame = CGRect(x: 15, y: 695, width: 360, height: 40)
         doughChanger.selectedSegmentIndex = 0
+        doughChanger.translatesAutoresizingMaskIntoConstraints = false
         
         return doughChanger
     }()
     
     let pizzaImageView : UIImageView = {
-        let pizzaImageView  = UIImageView(frame: CGRect(x: 15, y: 45, width: 360, height: 420))
+        let pizzaImageView  = UIImageView(frame: CGRect(x: 15, y: 45, width: 360, height: 360))
         pizzaImageView.backgroundColor = .red
         
         return pizzaImageView
@@ -53,7 +54,7 @@ class PizzaViewController: UIViewController {
         let description = UITextView(frame: CGRect(x: 10, y: 495, width: 360, height: 135))
         description.translatesAutoresizingMaskIntoConstraints = false
         description.font = .systemFont(ofSize: 15)
-
+        
         return description
     }()
     
@@ -61,6 +62,7 @@ class PizzaViewController: UIViewController {
         let sizeChanger = UISegmentedControl(items: ["Маленькая", "Средняя", "Большая"])
         sizeChanger.frame = CGRect(x: 15, y: 650, width: 360, height: 40)
         sizeChanger.selectedSegmentIndex = 1
+        sizeChanger.translatesAutoresizingMaskIntoConstraints = false
       
         return sizeChanger
     }()
@@ -116,6 +118,21 @@ class PizzaViewController: UIViewController {
         view.addSubview(descriptionView)
         view.addSubview(pizzaDescription)
         setActions()
+        setConstraints()
+    }
+    
+    func setConstraints() {
+        NSLayoutConstraint.activate([
+            doughChanger.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
+            doughChanger.heightAnchor.constraint(equalToConstant: 50),
+            doughChanger.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15),
+            doughChanger.topAnchor.constraint(equalTo: view.topAnchor, constant: 685),
+            
+            sizeChanger.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
+            sizeChanger.heightAnchor.constraint(equalToConstant: 50),
+            sizeChanger.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15),
+            sizeChanger.topAnchor.constraint(equalTo: view.topAnchor, constant: 630)
+        ])
     }
 }
 
@@ -127,7 +144,8 @@ extension PizzaViewController: DetailViewProtocol {
         pizzaImageView.image = image
         pizzaDescription.font = .boldSystemFont(ofSize: 19)
         pizzaDescription.text = menuItem.title
-        descriptionView.text = "Ветчина,шампиньоны, увеличинная порция моцареллы, томатный соус"
+        descriptionView.text = "В основе увеличенная порция моцареллы, любимая ветчина прошутто, ароматные шампиньоны и привычный томатный соус. Сочетание вкусов не оставит равнодушным"
+        
         
     }
 }
