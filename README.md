@@ -3,17 +3,16 @@
 
 ## Используемый стек
 * MVP по SOLID 
-* UIKit, Foundacion
+* UIKit, Foundation, AudioToolbox
 * Верстка кодом
 * URLSession
 * NSCache
-* GCD
 
 Реализованы кастомные UI-элементы. 
 
 ## Планы на будущее
-* Чат (CocoaPods + Firebase + CoreData)
-* Авторизация (CoreData)
+* Чат 
+* Авторизация 
 
 
 ## То, что уже готово
@@ -23,5 +22,6 @@
  <img src="https://user-images.githubusercontent.com/79770914/225755732-0f54ed86-2bb4-451f-9087-b1c94f11dd62.png" height="300" align="center"/>
  <img src="https://user-images.githubusercontent.com/79770914/225754317-d6aafd7f-11ab-485c-8771-88c7a78115fd.png" height="300" align="center"/>
  <img src="https://user-images.githubusercontent.com/79770914/225754405-bc6c373e-91d6-4f53-8470-a9134b9f8e8e.png" height="300" align="center"/>
+ <img src="https://user-images.githubusercontent.com/79770914/226983613-2b5efa2d-1ded-4054-8075-aa8e7298129e.jpg" height="300" align="center"/>
 </div>
 
