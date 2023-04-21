@@ -15,6 +15,7 @@ class ProfileViewController: UIViewController{
         super.viewDidLoad()
         setViews()
     }
+    
     //MARK:  - UI Elements
     let view1: UIView = {
         let view = UIView()
@@ -32,13 +33,26 @@ class ProfileViewController: UIViewController{
         return img
     }()
     
-    let userNameLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Илья 🖋"
-        label.font = .boldSystemFont(ofSize: 18)
-        label.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+    let userName: UIButton = {
+        let button = UIButton()
+        button.setTitle("Илья 🖋", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.font = .boldSystemFont(ofSize: 18)
+        button.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        button.addTarget(self, action: #selector(didTapName), for: .touchUpInside)
         
-        return label
+        return button
+    }()
+    
+    let cashBackButton : UIButton = {
+        let cashBackButton = UIButton(frame:CGRect(x: 0, y: 0, width: 0, height: 0))
+        cashBackButton.backgroundColor = UIColor(named: "priceColor")
+        cashBackButton.layer.cornerRadius = 15
+        cashBackButton.setTitle("Ваш кешбэк 10%", for: .normal)
+        cashBackButton.titleLabel?.font = .boldSystemFont(ofSize: 17)
+        cashBackButton.titleLabel?.textColor = .white
+        
+        return cashBackButton
     }()
     
     let phoneNumberLabel: UILabel = {
@@ -48,44 +62,81 @@ class ProfileViewController: UIViewController{
         return label
     }()
     
-    let scroll: UIScrollView = {
-        let view = UIScrollView()
-        view.backgroundColor = .systemGroupedBackground
-        view.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-        
-        return view
-    }()
-    
     let leftBinusButton: UIButton = {
         let button = UIButton()
-        button.frame = CGRect(x: 0, y: 0, width: 90, height: 70)
-        button.layer.cornerRadius = button.bounds.height / 2
-        button.backgroundColor = .red
+        button.frame = CGRect(x: 0, y: 0, width: 150, height: 90)
+        button.setTitle("100 Бонусов", for: .normal)
+        button.setTitleColor(UIColor(named: "priceColor"), for: .normal)
+        button.layer.cornerRadius = 30
+        button.backgroundColor = .white
+        button.layer.borderWidth = 1.0
+        button.layer.borderColor = CGColor(red: 0.914, green: 0.302, blue: 0.424, alpha: 1.0)
         
+
         return button
     }()
     
     let rightBinusButton: UIButton = {
         let button = UIButton()
-        button.frame = CGRect(x: 0, y: 0, width: 90, height: 70)
-        button.layer.cornerRadius = button.bounds.height / 2
-        button.backgroundColor = .green
+        button.frame = CGRect(x: 0, y: 0, width: 150, height: 90)
+        button.setTitle("Промо - Бонусов", for: .normal)
+        button.setTitleColor(UIColor(named: "priceColor"), for: .normal)
+        button.layer.cornerRadius = 30
+        button.backgroundColor = .white
+        button.layer.borderWidth = 1.0
+        button.layer.borderColor = CGColor(red: 0.914, green: 0.302, blue: 0.424, alpha: 1.0)
+        button.clipsToBounds = true
         
         return button
     }()
     
-    let bonusHistoryButton: UIButton = {
-        let button = UIButton()
-        button.frame = CGRect(x: 0, y: 0, width: 200, height: 40)
+    let bonusHistoryButton: profileButton = {
+        let button = profileButton()
+        button.textLabel.text = "История бонусов"
+        button.frame = CGRect(x: 0, y: 0, width: 200, height: 60)
         button.layer.cornerRadius = button.bounds.height / 2
-        button.backgroundColor = .blue
+        button.backgroundColor = .white
         
         return button
     }()
     
+    let orderistoryButton: profileButton = {
+        let button = profileButton()
+        button.textLabel.text = "История заказов"
+        button.frame = CGRect(x: 0, y: 0, width: 200, height: 60)
+        button.layer.cornerRadius = button.bounds.height / 2
+        button.backgroundColor = .white
+        
+        return button
+    }()
+    
+    let adressButton: profileButton = {
+        let button = profileButton()
+        button.textLabel.text = "Адреса доставки"
+        button.frame = CGRect(x: 0, y: 0, width: 200, height: 60)
+        button.layer.cornerRadius = button.bounds.height / 2
+        button.backgroundColor = .white
+        
+        return button
+    }()
+    
+    let paymentHistoryButton: profileButton = {
+        let button = profileButton()
+        button.textLabel.text = "Способы оплаты"
+        button.frame = CGRect(x: 0, y: 0, width: 200, height: 60)
+        button.layer.cornerRadius = button.bounds.height / 2
+        button.backgroundColor = .white
+        
+        return button
+    }()
+
     //MARK:  - Actions
     @objc func userInfoPressed() {
         
+    }
+    
+    @objc func didTapName() {
+        print("sdfsf")
     }
     
     //MARK: - Helpers
@@ -97,20 +148,32 @@ class ProfileViewController: UIViewController{
         view1.layer.cornerRadius = 30
         
         view1.addSubview(userImage)
-        view1.addSubview(userNameLabel)
+        view1.addSubview(userName)
         view1.addSubview(phoneNumberLabel)
-      //  view.addSubview(scroll)
+        view1.addSubview(cashBackButton)
         view.addSubview(view1)
-       
+        view.addSubview(leftBinusButton)
+        view.addSubview(rightBinusButton)
+        view.addSubview(orderistoryButton)
+        view.addSubview(paymentHistoryButton)
+        view.addSubview(adressButton)
+        view.addSubview(bonusHistoryButton)
+        
         setConstraints()
     }
     
     func setConstraints() {
         view1.translatesAutoresizingMaskIntoConstraints = false
         userImage.translatesAutoresizingMaskIntoConstraints = false
-        userNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        userName.translatesAutoresizingMaskIntoConstraints = false
         phoneNumberLabel.translatesAutoresizingMaskIntoConstraints = false
-       // scroll.translatesAutoresizingMaskIntoConstraints = false
+        cashBackButton.translatesAutoresizingMaskIntoConstraints = false
+        leftBinusButton.translatesAutoresizingMaskIntoConstraints = false
+        rightBinusButton.translatesAutoresizingMaskIntoConstraints = false
+        bonusHistoryButton.translatesAutoresizingMaskIntoConstraints = false
+        paymentHistoryButton.translatesAutoresizingMaskIntoConstraints = false
+        adressButton.translatesAutoresizingMaskIntoConstraints = false
+        orderistoryButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             view1.leftAnchor.constraint(equalTo: view.leftAnchor),
@@ -123,21 +186,52 @@ class ProfileViewController: UIViewController{
             userImage.heightAnchor.constraint(equalToConstant: 70),
             userImage.bottomAnchor.constraint(equalTo: view1.bottomAnchor, constant: -65),
             
-            userNameLabel.heightAnchor.constraint(equalToConstant: 40),
-            userNameLabel.leftAnchor.constraint(equalTo: userImage.rightAnchor, constant: 10),
-            userNameLabel.topAnchor.constraint(equalTo: userImage.topAnchor),
-            userNameLabel.widthAnchor.constraint(greaterThanOrEqualTo: userImage.widthAnchor),
+            userName.heightAnchor.constraint(equalToConstant: 40),
+            userName.leftAnchor.constraint(equalTo: userImage.rightAnchor, constant: 10),
+            userName.topAnchor.constraint(equalTo: userImage.topAnchor),
+            userName.widthAnchor.constraint(greaterThanOrEqualTo: userImage.widthAnchor),
             
             phoneNumberLabel.heightAnchor.constraint(equalToConstant: 20),
-            phoneNumberLabel.leftAnchor.constraint(equalTo: userNameLabel.leftAnchor),
-            phoneNumberLabel.topAnchor.constraint(equalTo: userNameLabel.bottomAnchor, constant: 5),
-            phoneNumberLabel.widthAnchor.constraint(greaterThanOrEqualTo: userNameLabel.widthAnchor),
+            phoneNumberLabel.leftAnchor.constraint(equalTo: userName.leftAnchor),
+            phoneNumberLabel.topAnchor.constraint(equalTo: userName.bottomAnchor, constant: 5),
+            phoneNumberLabel.widthAnchor.constraint(greaterThanOrEqualTo: userName.widthAnchor),
             
-//            scroll.leftAnchor.constraint(equalTo: view.leftAnchor),
-//            scroll.rightAnchor.constraint(equalTo: view.rightAnchor),
-//            scroll.topAnchor.constraint(equalTo: view1.bottomAnchor, constant: -50),
-//            scroll.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            cashBackButton.leftAnchor.constraint(equalTo: userImage.leftAnchor),
+            cashBackButton.rightAnchor.constraint(equalTo: view1.rightAnchor, constant: -20),
+            cashBackButton.topAnchor.constraint(equalTo: phoneNumberLabel.bottomAnchor, constant: 20),
+            cashBackButton.bottomAnchor.constraint(equalTo: view1.bottomAnchor, constant: -20),
+            
+            leftBinusButton.topAnchor.constraint(equalTo: view1.bottomAnchor, constant: 20),
+            leftBinusButton.leftAnchor.constraint(equalTo: cashBackButton.leftAnchor),
+            leftBinusButton.heightAnchor.constraint(equalToConstant: 90),
+            leftBinusButton.widthAnchor.constraint(equalToConstant: (view.bounds.width - 20 * 3) / 2),
+            
+            rightBinusButton.topAnchor.constraint(equalTo: leftBinusButton.topAnchor),
+            rightBinusButton.leftAnchor.constraint(equalTo: leftBinusButton.rightAnchor, constant: 20),
+            rightBinusButton.heightAnchor.constraint(equalToConstant: 90),
+            rightBinusButton.widthAnchor.constraint(equalToConstant: (view.bounds.width - 20 * 3) / 2),
+            
+            orderistoryButton.topAnchor.constraint(equalTo: rightBinusButton.bottomAnchor, constant: 50),
+            orderistoryButton.leftAnchor.constraint(equalTo: leftBinusButton.leftAnchor),
+            orderistoryButton.heightAnchor.constraint(equalToConstant: 60),
+            orderistoryButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            
+            paymentHistoryButton.topAnchor.constraint(equalTo: orderistoryButton.bottomAnchor, constant: 20),
+            paymentHistoryButton.leftAnchor.constraint(equalTo: leftBinusButton.leftAnchor),
+            paymentHistoryButton.heightAnchor.constraint(equalToConstant: 60),
+            paymentHistoryButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            
+            adressButton.topAnchor.constraint(equalTo: paymentHistoryButton.bottomAnchor, constant: 20),
+            adressButton.leftAnchor.constraint(equalTo: leftBinusButton.leftAnchor),
+            adressButton.heightAnchor.constraint(equalToConstant: 60),
+            adressButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            
+            bonusHistoryButton.topAnchor.constraint(equalTo: adressButton.bottomAnchor, constant: 20),
+            bonusHistoryButton.leftAnchor.constraint(equalTo: leftBinusButton.leftAnchor),
+            bonusHistoryButton.heightAnchor.constraint(equalToConstant: 60),
+            bonusHistoryButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
         ])
+        
     }
 }
 

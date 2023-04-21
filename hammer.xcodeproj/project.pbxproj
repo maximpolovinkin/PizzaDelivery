@@ -37,6 +37,7 @@
 		3290CF5128F8A254003BA3E3 /* TrashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290CF5028F8A254003BA3E3 /* TrashViewController.swift */; };
 		3290CF5B28F98015003BA3E3 /* bannersCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290CF5A28F98015003BA3E3 /* bannersCollectionView.swift */; };
 		3290CF5D28F98193003BA3E3 /* BannersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290CF5C28F98193003BA3E3 /* BannersCollectionViewCell.swift */; };
+		32978DAA29F2C39100629F7F /* profileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32978DA929F2C39100629F7F /* profileButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		3290CF5028F8A254003BA3E3 /* TrashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashViewController.swift; sourceTree = "<group>"; };
 		3290CF5A28F98015003BA3E3 /* bannersCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bannersCollectionView.swift; sourceTree = "<group>"; };
 		3290CF5C28F98193003BA3E3 /* BannersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannersCollectionViewCell.swift; sourceTree = "<group>"; };
+		32978DA929F2C39100629F7F /* profileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 		3281030F29A3AD780080F7CC /* ProfileModule */ = {
 			isa = PBXGroup;
 			children = (
+				32978DA829F2C36D00629F7F /* CustomUI */,
 				3281038E29AD233C0080F7CC /* Views */,
 				3281038F29AD23400080F7CC /* Presenter */,
 			);
@@ -323,6 +326,14 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
+		32978DA829F2C36D00629F7F /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				32978DA929F2C39100629F7F /* profileButton.swift */,
+			);
+			path = CustomUI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -402,6 +413,7 @@
 				328103AA29C2572D0080F7CC /* CartManager.swift in Sources */,
 				3281039C29AEACAC0080F7CC /* TrashPresenter.swift in Sources */,
 				328103A229B1196D0080F7CC /* Router.swift in Sources */,
+				32978DAA29F2C39100629F7F /* profileButton.swift in Sources */,
 				3272E37628FAD55300D7AF53 /* mainTableTableViewCell.swift in Sources */,
 				3290CF3C28F8A03E003BA3E3 /* ProfileViewController.swift in Sources */,
 				3281039829AD41630080F7CC /* ModuleBuilder.swift in Sources */,

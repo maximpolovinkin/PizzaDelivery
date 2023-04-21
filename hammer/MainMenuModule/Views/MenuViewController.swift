@@ -118,7 +118,7 @@ class MenuViewController: UIViewController {
             table.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
-}
+} 
 
 //MARK: - Table View
 extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
