@@ -186,7 +186,6 @@ extension TrashViewController: UITableViewDataSource, UITableViewDelegate {
             cell.configure(steppetValue: count, pizzaName: menuItem.title, image: image, currentId: menuItem.id, pizzaParamentes: "Средняя 30 см, традиционное тесто", delegate: self, tag: indexPath.section, price: price)
         }
         cell.contentView.isUserInteractionEnabled = false
-        
         table.reloadRows(at: [indexPath], with: .none)
         
         return cell

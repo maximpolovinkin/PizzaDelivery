@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3207BA8B29770E2B00D85DE0 /* CitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3207BA8A29770E2B00D85DE0 /* CitiesViewController.swift */; };
+		32194D5229F3369C007B7DBA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32194D5129F3369C007B7DBA /* GoogleService-Info.plist */; };
 		3224A8CF296EEF6D009E0D1A /* SupportChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3224A8CE296EEF6D009E0D1A /* SupportChatController.swift */; };
 		3224A8D1296F1DC1009E0D1A /* PizzaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3224A8D0296F1DC1009E0D1A /* PizzaViewController.swift */; };
 		3272E36C28F9F54400D7AF53 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3272E36B28F9F54400D7AF53 /* MenuCollectionViewCell.swift */; };
@@ -17,6 +18,12 @@
 		3272E37628FAD55300D7AF53 /* mainTableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3272E37528FAD55300D7AF53 /* mainTableTableViewCell.swift */; };
 		3272E37B28FB201F00D7AF53 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3272E37A28FB201F00D7AF53 /* NetworkService.swift */; };
 		3272E37D28FB225F00D7AF53 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3272E37C28FB225F00D7AF53 /* DataModel.swift */; };
+		3279452629F47066005CD3AF /* AutorisationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3279452529F47066005CD3AF /* AutorisationViewController.swift */; };
+		3279452829F470F0005CD3AF /* AutorisationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3279452729F470F0005CD3AF /* AutorisationPresenter.swift */; };
+		3279452A29F48881005CD3AF /* EnterPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3279452929F48881005CD3AF /* EnterPhoneViewController.swift */; };
+		3279452C29F4899B005CD3AF /* EnterCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3279452B29F4899B005CD3AF /* EnterCodeViewController.swift */; };
+		3279452E29F69962005CD3AF /* EnterPhonePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3279452D29F69962005CD3AF /* EnterPhonePresenter.swift */; };
+		3279453029F6996D005CD3AF /* EnterCodePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3279452F29F6996D005CD3AF /* EnterCodePresenter.swift */; };
 		3281039529AD29C60080F7CC /* MainMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3281039429AD29C60080F7CC /* MainMenuPresenter.swift */; };
 		3281039829AD41630080F7CC /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3281039729AD41630080F7CC /* ModuleBuilder.swift */; };
 		3281039A29AEAC9B0080F7CC /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3281039929AEAC9B0080F7CC /* ProfilePresenter.swift */; };
@@ -38,10 +45,12 @@
 		3290CF5B28F98015003BA3E3 /* bannersCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290CF5A28F98015003BA3E3 /* bannersCollectionView.swift */; };
 		3290CF5D28F98193003BA3E3 /* BannersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290CF5C28F98193003BA3E3 /* BannersCollectionViewCell.swift */; };
 		32978DAA29F2C39100629F7F /* profileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32978DA929F2C39100629F7F /* profileButton.swift */; };
+		53C77628F8F8EF823E9FAC2E /* Pods_hammer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F34B46AAE3706761A0B67B6 /* Pods_hammer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3207BA8A29770E2B00D85DE0 /* CitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewController.swift; sourceTree = "<group>"; };
+		32194D5129F3369C007B7DBA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3224A8CE296EEF6D009E0D1A /* SupportChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportChatController.swift; sourceTree = "<group>"; };
 		3224A8D0296F1DC1009E0D1A /* PizzaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaViewController.swift; sourceTree = "<group>"; };
 		3272E36B28F9F54400D7AF53 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -51,6 +60,12 @@
 		3272E37528FAD55300D7AF53 /* mainTableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainTableTableViewCell.swift; sourceTree = "<group>"; };
 		3272E37A28FB201F00D7AF53 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		3272E37C28FB225F00D7AF53 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		3279452529F47066005CD3AF /* AutorisationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutorisationViewController.swift; sourceTree = "<group>"; };
+		3279452729F470F0005CD3AF /* AutorisationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutorisationPresenter.swift; sourceTree = "<group>"; };
+		3279452929F48881005CD3AF /* EnterPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneViewController.swift; sourceTree = "<group>"; };
+		3279452B29F4899B005CD3AF /* EnterCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCodeViewController.swift; sourceTree = "<group>"; };
+		3279452D29F69962005CD3AF /* EnterPhonePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhonePresenter.swift; sourceTree = "<group>"; };
+		3279452F29F6996D005CD3AF /* EnterCodePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCodePresenter.swift; sourceTree = "<group>"; };
 		3281039429AD29C60080F7CC /* MainMenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuPresenter.swift; sourceTree = "<group>"; };
 		3281039729AD41630080F7CC /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		3281039929AEAC9B0080F7CC /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
@@ -74,6 +89,9 @@
 		3290CF5A28F98015003BA3E3 /* bannersCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bannersCollectionView.swift; sourceTree = "<group>"; };
 		3290CF5C28F98193003BA3E3 /* BannersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannersCollectionViewCell.swift; sourceTree = "<group>"; };
 		32978DA929F2C39100629F7F /* profileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileButton.swift; sourceTree = "<group>"; };
+		67A428178DB7C93CA58DB510 /* Pods-hammer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hammer.release.xcconfig"; path = "Target Support Files/Pods-hammer/Pods-hammer.release.xcconfig"; sourceTree = "<group>"; };
+		7F34B46AAE3706761A0B67B6 /* Pods_hammer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hammer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9985B12E25591448B457BD25 /* Pods-hammer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hammer.debug.xcconfig"; path = "Target Support Files/Pods-hammer/Pods-hammer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53C77628F8F8EF823E9FAC2E /* Pods_hammer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +226,9 @@
 			isa = PBXGroup;
 			children = (
 				3290CF3B28F8A03E003BA3E3 /* ProfileViewController.swift */,
+				3279452529F47066005CD3AF /* AutorisationViewController.swift */,
+				3279452929F48881005CD3AF /* EnterPhoneViewController.swift */,
+				3279452B29F4899B005CD3AF /* EnterCodeViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -215,6 +237,9 @@
 			isa = PBXGroup;
 			children = (
 				3281039929AEAC9B0080F7CC /* ProfilePresenter.swift */,
+				3279452729F470F0005CD3AF /* AutorisationPresenter.swift */,
+				3279452D29F69962005CD3AF /* EnterPhonePresenter.swift */,
+				3279452F29F6996D005CD3AF /* EnterCodePresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -288,6 +313,8 @@
 			children = (
 				3290CF3628F8A03E003BA3E3 /* hammer */,
 				3290CF3528F8A03E003BA3E3 /* Products */,
+				80B10BC9985AE7FB10558B13 /* Pods */,
+				3F70D0DE3BA909A8FA290ECE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -312,6 +339,7 @@
 				3290CF4B28F8A1F1003BA3E3 /* Other */,
 				3290CF3728F8A03E003BA3E3 /* AppDelegate.swift */,
 				3290CF3928F8A03E003BA3E3 /* SceneDelegate.swift */,
+				32194D5129F3369C007B7DBA /* GoogleService-Info.plist */,
 				3290CF4528F8A03F003BA3E3 /* Info.plist */,
 			);
 			path = hammer;
@@ -334,6 +362,23 @@
 			path = CustomUI;
 			sourceTree = "<group>";
 		};
+		3F70D0DE3BA909A8FA290ECE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7F34B46AAE3706761A0B67B6 /* Pods_hammer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		80B10BC9985AE7FB10558B13 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9985B12E25591448B457BD25 /* Pods-hammer.debug.xcconfig */,
+				67A428178DB7C93CA58DB510 /* Pods-hammer.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -341,17 +386,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3290CF4828F8A03F003BA3E3 /* Build configuration list for PBXNativeTarget "hammer" */;
 			buildPhases = (
+				AE74DE6EA4B85983AC39794C /* [CP] Check Pods Manifest.lock */,
 				3290CF3028F8A03E003BA3E3 /* Sources */,
 				3290CF3128F8A03E003BA3E3 /* Frameworks */,
 				3290CF3228F8A03E003BA3E3 /* Resources */,
+				E16032C2EC018052914D06B7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = hammer;
-			packageProductDependencies = (
-			);
 			productName = hammer;
 			productReference = 3290CF3428F8A03E003BA3E3 /* hammer.app */;
 			productType = "com.apple.product-type.application";
@@ -380,8 +425,6 @@
 				Base,
 			);
 			mainGroup = 3290CF2B28F8A03E003BA3E3;
-			packageReferences = (
-			);
 			productRefGroup = 3290CF3528F8A03E003BA3E3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -398,10 +441,53 @@
 			files = (
 				3290CF4428F8A03F003BA3E3 /* LaunchScreen.storyboard in Resources */,
 				3290CF4128F8A03F003BA3E3 /* Assets.xcassets in Resources */,
+				32194D5229F3369C007B7DBA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AE74DE6EA4B85983AC39794C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-hammer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E16032C2EC018052914D06B7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hammer/Pods-hammer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hammer/Pods-hammer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hammer/Pods-hammer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3290CF3028F8A03E003BA3E3 /* Sources */ = {
@@ -410,6 +496,7 @@
 			files = (
 				328103AE29C3BB000080F7CC /* TrashTableViewCell.swift in Sources */,
 				3272E36E28F9F57900D7AF53 /* MenuCollectionView.swift in Sources */,
+				3279453029F6996D005CD3AF /* EnterCodePresenter.swift in Sources */,
 				328103AA29C2572D0080F7CC /* CartManager.swift in Sources */,
 				3281039C29AEACAC0080F7CC /* TrashPresenter.swift in Sources */,
 				328103A229B1196D0080F7CC /* Router.swift in Sources */,
@@ -424,6 +511,7 @@
 				3290CF5D28F98193003BA3E3 /* BannersCollectionViewCell.swift in Sources */,
 				3272E37D28FB225F00D7AF53 /* DataModel.swift in Sources */,
 				3290CF4D28F8A215003BA3E3 /* ContactsViewController.swift in Sources */,
+				3279452A29F48881005CD3AF /* EnterPhoneViewController.swift in Sources */,
 				3281039E29AEACC20080F7CC /* ContactsPresenter.swift in Sources */,
 				3224A8CF296EEF6D009E0D1A /* SupportChatController.swift in Sources */,
 				328103A029AEACD10080F7CC /* DetailPizzaPresenter.swift in Sources */,
@@ -433,7 +521,11 @@
 				3272E37028F9FBD900D7AF53 /* BannersModel.swift in Sources */,
 				3290CF3828F8A03E003BA3E3 /* AppDelegate.swift in Sources */,
 				328103B029C49BA40080F7CC /* TrashCustomStepper.swift in Sources */,
+				3279452E29F69962005CD3AF /* EnterPhonePresenter.swift in Sources */,
+				3279452829F470F0005CD3AF /* AutorisationPresenter.swift in Sources */,
+				3279452C29F4899B005CD3AF /* EnterCodeViewController.swift in Sources */,
 				3281039A29AEAC9B0080F7CC /* ProfilePresenter.swift in Sources */,
+				3279452629F47066005CD3AF /* AutorisationViewController.swift in Sources */,
 				3290CF5B28F98015003BA3E3 /* bannersCollectionView.swift in Sources */,
 				3290CF3A28F8A03E003BA3E3 /* SceneDelegate.swift in Sources */,
 				3272E36C28F9F54400D7AF53 /* MenuCollectionViewCell.swift in Sources */,
@@ -505,7 +597,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -560,7 +652,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -572,13 +664,14 @@
 		};
 		3290CF4928F8A03F003BA3E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9985B12E25591448B457BD25 /* Pods-hammer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZV23SB6J73;
-				EXCLUDED_ARCHS = arm64;
+				EXCLUDED_ARCHS = x86_64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hammer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -586,6 +679,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -601,13 +695,14 @@
 		};
 		3290CF4A28F8A03F003BA3E3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67A428178DB7C93CA58DB510 /* Pods-hammer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZV23SB6J73;
-				EXCLUDED_ARCHS = arm64;
+				EXCLUDED_ARCHS = x86_64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hammer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -615,6 +710,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

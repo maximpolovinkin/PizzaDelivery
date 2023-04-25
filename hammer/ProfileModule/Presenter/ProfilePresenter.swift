@@ -7,8 +7,6 @@
 
 import Foundation
 
-// Module is not done at all
-
 protocol ProfileViewProtocol: AnyObject {
     //Something
 }
@@ -24,5 +22,9 @@ class ProfilePresenter: ProfileViewPresenterProtocol {
     required init(view: ProfileViewProtocol, router: RouterProtocol) {
         self.view = view
         self.router = router
+    }
+    
+    func leaveButtonPressed() {
+        router?.unAutorise()
     }
 }

@@ -8,12 +8,16 @@
 import Foundation
 import UIKit
 
+
 protocol AssamblyBuilderProtocol {
     func createMenuModule(router: RouterProtocol) -> UIViewController
     func createDetailModule(menuItem: menuItems?, image: UIImage?) -> UIViewController
     func createContacntsModule(router: RouterProtocol) -> UIViewController
     func createProfileModule(router: RouterProtocol) -> UIViewController
     func createTrashModule(router: RouterProtocol) -> UIViewController
+    func createAutoriseeModule(router: RouterProtocol) -> UIViewController
+    func createEnterCodeModule(router: RouterProtocol, id: String) -> UIViewController
+    func createEnterPhoneModule(router: RouterProtocol) -> UIViewController
 }
 
 class ModuleBuilder: NSObject, AssamblyBuilderProtocol {
@@ -43,6 +47,34 @@ class ModuleBuilder: NSObject, AssamblyBuilderProtocol {
     func createContacntsModule(router: RouterProtocol) -> UIViewController {
         let view =  ContactsViewController()
         let presenter = ContactsPresenter(view: view, router: router)
+        
+        view.presenter = presenter
+        
+        return view
+    }
+    
+    //MARK: Autorise module
+    func createAutoriseeModule(router: RouterProtocol) -> UIViewController {
+        let view =  AutorisationViewController()
+        let presenter = AutorisationPresenter(view: view, router: router)
+        
+        view.presenter = presenter
+        
+        return view
+    }
+    
+    func createEnterCodeModule(router: RouterProtocol, id: String) -> UIViewController {
+        let view =  EnterCodeViewController()
+        let presenter = EnterCodePresenter(view: view, router: router, id: id)
+        
+        view.presenter = presenter
+        
+        return view
+    }
+    
+    func createEnterPhoneModule(router: RouterProtocol) -> UIViewController {
+        let view =  EnterPhoneViewController()
+        let presenter = EnterPhonePresenter(view: view, router: router)
         
         view.presenter = presenter
         

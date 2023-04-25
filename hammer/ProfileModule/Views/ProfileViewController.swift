@@ -129,10 +129,25 @@ class ProfileViewController: UIViewController{
         
         return button
     }()
+    
+    let leaveButton: UIButton = {
+        let button = UIButton()
+        button.frame = CGRect(x: 0, y: 0, width: 200, height: 60)
+        button.backgroundColor = .none
+        button.setTitle("Выход", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.addTarget(self, action: #selector(leavePressed), for: .touchUpInside)
+        
+        return button
+    }()
 
     //MARK:  - Actions
     @objc func userInfoPressed() {
         
+    }
+    
+    @objc func leavePressed() {
+        presenter?.leaveButtonPressed()
     }
     
     @objc func didTapName() {
@@ -158,6 +173,7 @@ class ProfileViewController: UIViewController{
         view.addSubview(paymentHistoryButton)
         view.addSubview(adressButton)
         view.addSubview(bonusHistoryButton)
+        view.addSubview(leaveButton)
         
         setConstraints()
     }
@@ -174,6 +190,7 @@ class ProfileViewController: UIViewController{
         paymentHistoryButton.translatesAutoresizingMaskIntoConstraints = false
         adressButton.translatesAutoresizingMaskIntoConstraints = false
         orderistoryButton.translatesAutoresizingMaskIntoConstraints = false
+        leaveButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             view1.leftAnchor.constraint(equalTo: view.leftAnchor),
@@ -230,6 +247,9 @@ class ProfileViewController: UIViewController{
             bonusHistoryButton.leftAnchor.constraint(equalTo: leftBinusButton.leftAnchor),
             bonusHistoryButton.heightAnchor.constraint(equalToConstant: 60),
             bonusHistoryButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            
+            leaveButton.topAnchor.constraint(equalTo: bonusHistoryButton.bottomAnchor, constant: 20),
+            leaveButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
         
     }

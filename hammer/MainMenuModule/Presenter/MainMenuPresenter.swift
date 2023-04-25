@@ -69,6 +69,7 @@ class MainMenuPresenter: MenuViewPresenterProtocol {
             }
         }
     }
+    
     //MARK: Get titles from cache if they are there otherwise loading from url and save
     func getTitle(forKey index: Int, completion: @escaping ((String?) -> Void)) {
         if let menuItems = self.menuItems {

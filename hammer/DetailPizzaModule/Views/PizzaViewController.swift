@@ -98,7 +98,6 @@ class PizzaViewController: UIViewController {
         impactFeedbackgenerator.impactOccurred()
     }
     
-
      //MARK: - Helpers
     func setActions(){ // was added cuz caught unrecognized selector sent to class
         closeBtn.addTarget(self, action: #selector(close), for: .touchUpInside)
