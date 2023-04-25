@@ -118,6 +118,7 @@ class MenuViewController: UIViewController {
             table.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
+ 
 } 
 
 //MARK: - Table View
@@ -126,9 +127,7 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = table.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! mainTableTableViewCell
 
         presenter.getImage(forKey: indexPath.row) { image in
-            if let image = image {
-                cell.img.image = image
-            }
+            cell.img.image = image ?? nil
         }
 
         presenter.getTitle(forKey: indexPath.row) { title in

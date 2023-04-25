@@ -77,6 +77,9 @@ class ContactsViewController: UIViewController, ContactsViewProtocol {
     }()
     
     func setUpViews() {
+        view.backgroundColor = .white
+        tabBarItem = UITabBarItem(title: "Контакты", image: UIImage(named: "contacts"), tag: 0)
+        
         view.addSubview(imageView)
         view.addSubview(mapButton)
         view.addSubview(supportLabel)
@@ -89,16 +92,9 @@ class ContactsViewController: UIViewController, ContactsViewProtocol {
      //MARK: - VC Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        tabBarItem = UITabBarItem(title: "Контакты", image: UIImage(named: "contacts"), tag: 0)
         setUpViews()
         setActions()
        
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        tabBarItem = UITabBarItem(title: "Контакты", image: UIImage(named: "contacts"), tag: 0)
     }
     
     //MARK: - Actions

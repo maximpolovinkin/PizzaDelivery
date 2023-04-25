@@ -18,8 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let tabBar = UITabBarController()
         tabBar.tabBar.backgroundColor = .none
-        tabBar.tabBar.unselectedItemTintColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
-        tabBar.tabBar.selectedImageTintColor = #colorLiteral(red: 0.9875084758, green: 0.2303813398, blue: 0.41417557, alpha: 1)
+        
         
         let assemblyBuilder = ModuleBuilder()
         let router = Router(tabBar: tabBar, assemblyBuilder: assemblyBuilder)

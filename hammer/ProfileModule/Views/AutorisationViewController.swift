@@ -31,7 +31,7 @@ class AutorisationViewController: UIViewController {
     
     var catImage: UIImageView = {
         let image = UIImageView(frame: CGRect(x: 100 , y: 200, width: 200, height: 200))
-        image.image = UIImage(named: "catImg")
+        image.image = UIImage(named: "catForAuth")
        
         return image
     }()

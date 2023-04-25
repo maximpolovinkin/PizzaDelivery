@@ -30,7 +30,6 @@ class EnterPhonePresenter: EnterPhoneViewPresenterProtocol {
     
     func didTapButton(telephoneNumber: String?, view: UIViewController) {
         guard let telephoneNumber = telephoneNumber else  { return }
-        print(telephoneNumber)
         PhoneAuthProvider.provider().verifyPhoneNumber(telephoneNumber, uiDelegate: nil) {[router] id, error in
             if error != nil {
                 print(error?.localizedDescription)

@@ -50,7 +50,7 @@ class EnterCodeViewController: UIViewController {
         return label
     }()
     
-    private let codeTextView: UITextView = {
+    let codeTextView: UITextView = {
         let text = UITextView()
         text.frame = CGRect(x: 0, y: 0, width: 0, height: 40)
         text.backgroundColor = .white
@@ -147,7 +147,7 @@ extension EnterCodeViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         if textView.text.count == 6 {
             codeTextView.endEditing(true)
-            presenter?.didTapButton(smsCode: textView.text)
+            presenter?.didTapButton(smsCode: textView.text, view: self)
             self.dismiss(animated: true)
         }
     }

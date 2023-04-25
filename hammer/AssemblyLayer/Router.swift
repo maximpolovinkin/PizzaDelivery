@@ -66,7 +66,15 @@ class Router: RouterProtocol {
             navItem.leftBarButtonItem = UIBarButtonItem(customView: button)
             
             tabBar.viewControllers = [mainVC, contactsVC, profileNavVC, trashNavVc]
+         
+            if #available(iOS 15.0, *) {
+               let appearance = UITabBarAppearance()
+               appearance.backgroundEffect = UIBlurEffect(style: .light)
+                tabBar.tabBar.scrollEdgeAppearance = appearance
+            }
             
+            tabBar.tabBar.unselectedItemTintColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+            tabBar.tabBar.selectedImageTintColor = #colorLiteral(red: 0.9875084758, green: 0.2303813398, blue: 0.41417557, alpha: 1)
         }
     }
     

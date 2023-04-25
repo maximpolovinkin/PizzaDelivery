@@ -21,6 +21,9 @@ class TrashViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        //tabBarController?.tabBar.trans = false
+        
+        
         if Cart.shareInstance().getUniqueItemsCount() > 0 {
             self.catImage.isHidden = true
             self.cartEmotyLabel.isHidden = true
