@@ -3,7 +3,7 @@
 
 ## Используемый стек
 * MVP по SOLID 
-* UIKit, Foundation, AudioToolbox, Firebase
+* UIKit, Foundation, AudioToolbox, Firebase, FlagPhoneNumber
 * Верстка кодом
 * URLSession
 * NSCache
